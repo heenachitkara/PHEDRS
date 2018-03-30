@@ -1,0 +1,1 @@
+${application.title}-${application.version} using Spring Boot ${spring-boot.version}

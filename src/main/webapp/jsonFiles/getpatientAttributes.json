@@ -1,0 +1,80 @@
+{
+  "webservice_status" : {
+    "status" : "SUCCESS",
+    "message" : ""
+  },
+  "registry_patient" : {
+    "registry_patient_id" : 52408,
+    "mrn" : "3014973",
+    "full_name" : null,
+    "registry_status_id" : 2724,
+    "registry_status" : "Provisional",
+    "last_review_date" : null,
+    "workflow_status" : null,
+    "assigned_by_name" : null,
+    "lastContactDate" : null,
+    "registryWorkflowStatus" : "Reviewed",
+    "registry_workflow_status_id" : 0
+  },
+ "patient_demographics" : {
+    "numeric_patient_id" : 0,
+    "mrn" : "3014973",
+    "full_name" : "VIRGINIA COURTLAND",
+    "first_name" : "VIRGINIA",
+    "last_name" : "COURTLAND",
+    "phone_number" : null,
+    "address1" : null,
+    "address2" : null,
+    "city" : "MARION JUNCTION",
+    "state" : null,
+    "zipcode" : "36759",
+    "birth_date" : "1962-08-22",
+    "gender" : "F",
+    "race" : "B",
+    "ethnicity" : null
+  },
+  "nlp_document_list" : null,
+  "registry_encounters_list" : null,
+  "registry_encounter_attributes_list" : null,
+  "registry_patient_diagnosis_codes_list" : null,
+  "registry_all_patient_attribute_list" : [ {
+    "mrn" : "3014973",
+    "regsitry_id" : 2861,
+    "name" : "Asthma",
+    "status_assignment_date" : "2016-06-10 15:19:59.0",
+    "registry_patient_cvterm_id" : 208,
+    "registry_patient_id" : 110750,
+    "annotator_id" : 282,
+    "annotation_date" : "2016-08-11 14:04:16.0",
+    "annotator_comment" : "UI",
+    "is_valid" : "N",
+    "start_assignment_date" : "2016-08-11 14:04:16.0",
+    "end_assignment_date" : null
+  }, {
+    "mrn" : "3014973",
+    "regsitry_id" : 2689,
+    "name" : "Asthma",
+    "status_assignment_date" : "2016-02-09 13:42:59.0",
+    "registry_patient_cvterm_id" : 101,
+    "registry_patient_id" : 48861,
+    "annotator_id" : 282,
+    "annotation_date" : "2016-07-20 09:37:31.0",
+    "annotator_comment" : null,
+    "is_valid" : "Y",
+    "start_assignment_date" : "2016-07-18 09:37:31.0",
+    "end_assignment_date" : null
+  }, {
+    "mrn" : "3014973",
+    "regsitry_id" : 2861,
+    "name" : "COPD",
+    "status_assignment_date" : "2016-06-10 15:19:59.0",
+    "registry_patient_cvterm_id" : 102,
+    "registry_patient_id" : 110750,
+    "annotator_id" : 282,
+    "annotation_date" : "2016-07-20 09:52:52.0",
+    "annotator_comment" : null,
+    "is_valid" : "Y",
+    "start_assignment_date" : "2016-07-18 09:52:52.0",
+    "end_assignment_date" : null
+  } ]
+}

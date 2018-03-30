@@ -1,0 +1,7 @@
+﻿table {border-collapse: collapse;}
+td    {padding: 6px;}
+
+
+tr.spaceUnder>td {
+  padding-bottom: 1em;
+}

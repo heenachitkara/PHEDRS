@@ -1,0 +1,56 @@
+
+
+
+
+.table-title {
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+.search-table {
+    margin: 0 0 15px 0;
+}
+.search-table th {
+    font-size: 11pt;
+    font-weight: 700;
+    padding: 0 5px 15px 0;
+    text-align: right;
+    vertical-align: top;
+}
+.search-table td {
+    font-size: 11pt;
+    padding: 0 0 15px 0;
+    vertical-align: top;
+}
+.search-table td * {
+    vertical-align: top;
+}
+.from-label {
+    display: inline-block;
+}
+.to-label {
+    display: inline-block;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 11pt;
+    font-weight: 700;
+    /*padding: 0 3px 5px 0;*/
+    text-align: right;
+}
+.section-control {
+    font-size: 11pt;
+    margin-right: 15px;
+    padding: 2px;
+    min-width: 160px;
+}
+.section-date {
+    font-size: 11pt;
+    text-align: center;
+    width: 100px;
+}
+
+.search_results_divider {
+    margin: 30px 0 30px 0;
+}

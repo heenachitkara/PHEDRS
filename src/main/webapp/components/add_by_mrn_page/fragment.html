@@ -1,0 +1,48 @@
+
+
+
+<div id="add_by_mrn_page">
+    
+    <div class="page-title">Add a patient to the registry</div>
+
+    <div class="search-panel">
+        <label for="mrn">MRN</label>
+        <input type="text" class="mrn-ctrl">
+        <button class="btn btn-success btn-sm lookup-button">LOOKUP</button>
+    </div>
+
+    <div class="patient-data-preview" style="display: none">
+
+        <div class="full-name"></div>
+        <div class="mrn"></div>
+        <div class="race-gender-age"></div>
+    </div>
+
+    <div class="error-panel" style="display: none"></div>
+
+    <div class="existing-patient-panel" style="display: none">
+        This patient already exists in the registry. 
+        <button class="btn btn-success btn-sm view-patient-button">VIEW PATIENT</button>
+    </div>
+
+    <div class="new-patient-panel" style="display: none">
+
+        <div class="status-ctrl-row">
+            <label>Status:</label> <select class="status-id-ctrl"></select>
+        </div>
+        <textarea class="comment-ctrl status-comment-ctrl" placeholder="Enter a comment"></textarea>
+
+        <div class="status-ctrl-row">
+            <label>Review Status:</label> <select class="review-status-id-ctrl"></select>
+        </div>
+        <textarea class="comment-ctrl review-status-comment-ctrl" placeholder="Enter a comment"></textarea>
+        
+        <button class="btn btn-success btn-sm add-button">ADD</button>
+    </div>
+
+    <div class="patient-added-panel" style="display: none">
+        The patient was added successfully. 
+        <button class="btn btn-success btn-sm view-patient-button">VIEW PATIENT</button>
+    </div>
+
+</div>

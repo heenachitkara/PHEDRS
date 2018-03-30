@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd"
+>
+
+<!-- Property Value placeholders --> 
+<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="classpath:application.properties" />
+</bean>   
+
+
+<!-- Define Database Connections -->
+<bean id="DB_ORA_DS_PHEDRS" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">	
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="url" value="${db_ora_1.url}"></property>
+    <property name="username" value="${db_ora_1.username}"></property>
+    <property name="password" value="${db_ora_1.password}"></property>	
+</bean>
+
+<bean id="DB_ORA_DS_MEDICS" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">	
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="url" value="${db_ora_2.url}"></property>
+    <property name="username" value="${db_ora_2.username}"></property>
+    <property name="password" value="${db_ora_2.password}"></property>	
+</bean>
+
+<!-- Skipping 3 which represents a data warehouse connection in registry_tools -->
+
+<bean id="DB_ORA_DS_I2B2Core_RO" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">	
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="url" value="${db_ora_4.url}"></property>
+    <property name="username" value="${db_ora_4.username}"></property>
+    <property name="password" value="${db_ora_4.password}"></property>	
+</bean>	
+<!-- End database connection Beans -->
+	 
+	 
+<!-- Dao beans -->
+<bean id="appProps" class="edu.uab.registry.util.ApplicationProps">
+	<property name="env"><value>${env}</value></property>	
+	<property name="email_to"><value>${email_to}</value></property>	
+	<property name="ldap_url"><value>${ldap_url}</value></property>
+	<property name="search_base"><value>${search_base}</value></property>
+</bean>
+ 
+ 
+<!--  dmd 03/16/17 -->
+<bean id="i2b2CorePatientDemographicsDao" class="edu.uab.registry.dao.impl.I2b2CorePatientDemographicsDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_I2B2Core_RO"/></property>
+</bean>
+
+<!--  dmd testing 030817 -->
+<bean id="authenticatedUserDao" class="edu.uab.registry.dao.impl.AuthenticatedUserDaoImpl">
+    <property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!--  dmd testing 030917 -->
+<bean id="registryPatientStatusDao" class="edu.uab.registry.dao.impl.RegistryPatientStatusDaoImpl">
+    <property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+
+
+<bean id="ping_PHEDRS_DEV" class="edu.uab.registry.dao.impl.PingDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="ping_PHEDRS_PROD" class="edu.uab.registry.dao.impl.PingDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="authorizeDao" class="edu.uab.registry.dao.impl.AuthorizeDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="registryUserDao" class="edu.uab.registry.dao.impl.RegistryUserDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="genericRegistryPatientDao" class="edu.uab.registry.dao.impl.GenericRegistryPatientDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="genericRegistryPatientDatasetDao" class="edu.uab.registry.dao.impl.GenericRegistryPatientDatasetDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="searchRegistryPatientDao" class="edu.uab.registry.dao.impl.SearchRegistryPatientDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="genericRegistryPatientsTabDao" class="edu.uab.registry.dao.impl.GenericRegistryPatientsTabDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="registryPatientDemographicsDao" class="edu.uab.registry.dao.impl.RegistryPatientDemographicsDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="registryPatientEncounterAttributesDao" class="edu.uab.registry.dao.impl.RegistryPatientEncounterAttributesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="registryPatientAttributesDao" class="edu.uab.registry.dao.impl.RegistryPatientAttributesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="registryEncounterAttributesDao" class="edu.uab.registry.dao.impl.RegistryEncounterAttributesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="registryEncountersDao" class="edu.uab.registry.dao.impl.RegistryEncountersDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="cvTermsDao" class="edu.uab.registry.dao.impl.CvTermsDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="getRegistryPatientHistoryDao" class="edu.uab.registry.dao.impl.RegistryPatientHistoryDaoImpl">
+        <property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+<bean id="detectionCodesDao" class="edu.uab.registry.dao.impl.DetectionCodesDaoImpl">
+      <property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<bean id="nlpPatientDao" class="edu.uab.registry.dao.impl.NlpPatientDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_MEDICS"/></property>
+</bean>
+
+<!--**************************START: BEANS FOR NLP STUFF*************************************  -->
+
+<!-- Using the following bean for getting value for NLP Documents  -->
+<bean id="nlpDocumentsDao" class="edu.uab.registry.dao.impl.NlpDocumentsDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_MEDICS"/></property>
+</bean>
+<!--Using the following bean to get the value from cvtermprop table  -->
+<bean id="nlpValueForDocumentsDao" class="edu.uab.registry.dao.impl.NlpDocumentsDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!--**************************END: BEANS FOR NLP STUFF*************************************  -->
+
+<!-- Defining bean for cvmetada webservice following getdocuments approach and changed the DB_ORA_DS_PHEDRS name -->
+<bean id="cvMetaDataListDao" class="edu.uab.registry.dao.impl.CvMetaDataListDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for getPAtientAttributesCV webservice -->
+<bean id="patientCVListDao" class="edu.uab.registry.dao.impl.PatientCVDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for getEncounterAttributesCV webservice -->
+<bean id="encounterCVListDao" class="edu.uab.registry.dao.impl.EncounterCVDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for get_encounters_insurance webservice -->
+<bean id="encounterInsuranceListDao" class="edu.uab.registry.dao.impl.EncounterInsuranceListDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for getRegistryPatientAttributes webservice -->
+<bean id="registryConfigPatientAttrListDao" class="edu.uab.registry.dao.impl.RegistryConfigPatientAttributesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for getRegistryEncounterAttributes webservice -->
+<bean id="registryConfigEncounterAttrListDao" class="edu.uab.registry.dao.impl.RegConfigEncounterAttributesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for getRegistryAttributes webservice -->
+<bean id="regAttributeListDao" class="edu.uab.registry.dao.impl.RegistryAttributeDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for getRegistryTabs webservice -->
+<bean id="regTabsListDao" class="edu.uab.registry.dao.impl.RegistryTabsDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for get_role_names webservice -->
+<bean id="roleNamesDao" class="edu.uab.registry.dao.impl.GetRoleNamesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean> 
+
+<!-- Defining bean for search_attribute_config_cvname webservice -->
+<bean id="searchCvNameDao" class="edu.uab.registry.dao.impl.SearchCvNameAttributeConfigDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for get_registry_config_add_attributes webservice -->
+<bean id="getconfigAddAttrDao" class="edu.uab.registry.dao.impl.GetConfigAddAttributesDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for get_cvterm_name webservice -->
+<bean id="cvTermNameDao" class="edu.uab.registry.dao.impl.CvtermNameDaoImpl">	
+	<!-- <property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property> -->
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+<!-- Defining bean for GetAllCVs webservice -->
+<bean id="getAllCVListDao" class="edu.uab.registry.dao.impl.GetAllCVDaoImpl">	
+	<property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+</bean>
+
+
+
+
+<!-- Hibernate 4 SessionFactory Bean definition --> 
+<!-- Unclear why these beans are treated differently or why they needed a separate data source -->
+<bean id="hibernate4AnnotatedSessionFactory"
+	class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name="dataSource"><ref bean="DB_ORA_DS_PHEDRS"/></property>
+    <property name="annotatedClasses">
+    	<list>
+    		<value>edu.uab.registry.orm.Cv</value>
+    		<value>edu.uab.registry.orm.Cvterm</value>
+		<value>edu.uab.registry.orm.CvMetaData</value> 
+    		<value>edu.uab.registry.orm.CvtermProp</value>
+    		<value>edu.uab.registry.orm.Db</value>
+    		<value>edu.uab.registry.orm.Dbxref</value>
+    		<value>edu.uab.registry.orm.RegistryActor</value>
+    		<value>edu.uab.registry.orm.RegistryAuthz</value>
+    		<!-- For MetaData Web Service if you plan to use ORM  -->
+    		<value>edu.uab.registry.orm.RegistryCvMetaData</value>
+    		<value>edu.uab.registry.orm.RegistryPatient</value>    		
+    		<value>edu.uab.registry.orm.RegistryEncounterCvterm</value>
+		<value>edu.uab.registry.orm.RegistryEncounterCvtermHist</value>
+    		<value>edu.uab.registry.orm.RegistryPatientHistory</value>    
+    		<value>edu.uab.registry.orm.RegistryPatientCvterm</value>
+    		<value>edu.uab.registry.orm.RegistryPatientCvtermHist</value>    
+		<value>edu.uab.registry.orm.RegistryPatientDemographics</value>    				    	
+    	</list>
+    </property>
+    <property name="hibernateProperties">
+        <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+            <prop key="hibernate.current_session_context_class">thread</prop>
+            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.format_sql">true</prop>            
+        </props>
+    </property>
+</bean>
+
+<bean id="cvDao" class="edu.uab.registry.orm.dao.impl.CvDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="cvtermDao" class="edu.uab.registry.orm.dao.impl.CvtermDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="cvtermPropDao" class="edu.uab.registry.orm.dao.impl.CvtermPropDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="dbDao" class="edu.uab.registry.orm.dao.impl.DbDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="dbxrefDao" class="edu.uab.registry.orm.dao.impl.DbxrefDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryActorDao" class="edu.uab.registry.orm.dao.impl.RegistryActorDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryAuthzDao" class="edu.uab.registry.orm.dao.impl.RegistryAuthzDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+
+<!-- Bean Declaration for CV Metadata webservice if Plan to use ORM  -->
+<!-- <bean id="registryCvMetaDataDao" class="edu.uab.registry.orm.dao.impl.RegistryCvMetaDataDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean> -->
+
+<bean id="registryPatientCvtermDao" class="edu.uab.registry.orm.dao.impl.RegistryPatientCvtermDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryEncounterCvtermDao" class="edu.uab.registry.orm.dao.impl.RegistryEncounterCvtermDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryEncounterCvtermHistDao" class="edu.uab.registry.orm.dao.impl.RegistryEncounterCvtermHistDaoImpl">
+	<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryPatientHistoryDao" class="edu.uab.registry.orm.dao.impl.RegistryPatientHistoryDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryPatientStatusHistoryDao" class="edu.uab.registry.orm.dao.impl.RegistryPatientStatusHistoryDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryPatientDao" class="edu.uab.registry.orm.dao.impl.RegistryPatientDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean>
+<bean id="registryPatientHistoryDemographicsDao" class="edu.uab.registry.orm.dao.impl.RegistryPatientHistoryDemographicsDaoImpl">
+    <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+</bean> 
+
+</beans>
+

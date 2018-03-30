@@ -1,0 +1,87 @@
+
+
+
+<div id="add_user_dialog" class="modal fade" role="dialog">
+ 
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Add New User</h2>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="user_login_id">Login ID</label>
+                    <input type="text" class="form-control" id="user_login_id">
+                </div>
+
+                <div class="form-group">
+                    <label for="user_first_name">First Name</label>
+                    <input type="text" class="form-control" id="user_first_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="user_last_name">Last Name</label>
+                    <input type="text" class="form-control" id="user_last_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="user_email">Email</label>
+                    <input type="text" class="form-control" id="user_email">
+                </div>
+
+                <div class="form-group">
+                    <label for="user_role">Role</label>
+                    <select class="form-control user_role_List" id="user_role_List">
+                        <!--<option value="3161">Manager</option>
+        <option value="3162">Inactive</option>
+        <option value="3041">Registrar</option>
+        <option value="3042">Administrator</option>
+        <option value="3043">Viewer</option>-->
+                    </select>
+                </div>
+                <!--
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <div data-bind="user_role">User Role <span class="caret"></span></div>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">User</a></li>
+                        <li><a href="#">Admin</a></li>
+                        <li><a href="#">Manager</a></li>
+                    </ul>
+                </div>
+                -->
+
+                <div class="form-group">
+                    <label for="user_is_enabled">Enabled?</label>
+                    <select class="form-control" id="user_is_enabled">
+                        <option value="y">Yes</option>
+                        <option value="n">No</option>
+                    </select>
+                </div>
+
+                <!--
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Enabled / Disable<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Enabled</a></li>
+                        <li><a href="#">Disable</a></li>
+                    </ul>
+                </div>
+                -->
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning cancel-button" data-dismiss="modal">CANCEL</button>
+                <button type="button" class="btn btn-success save-button">SAVE</button>
+            </div>
+
+        </div>
+    </div>
+</div>

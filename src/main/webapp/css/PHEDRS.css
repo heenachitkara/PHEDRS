@@ -1,0 +1,331 @@
+
+
+
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+}
+body
+{
+    background-color: #f2f2f2; /* For a dark style: #3c3c3c; */
+    margin: 0;
+    padding: 0;
+}
+body *
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+}
+
+b
+{
+    font-weight: 700;
+}
+
+
+#wrap
+{
+    color: #000;
+    min-height: 100%;
+    height: auto !important;
+    padding: 0;
+}
+
+
+
+
+/* Menubar */
+.navbar {
+    height: unset;
+    margin: unset;
+    min-height: 60px;
+}
+.navbar-inverse {
+    background-color: #535353;
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    margin-bottom: 0;
+    /*min-height: 60px;*/
+    -webkit-filter: none;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+/* The nav bar's header */
+.navbar-header {
+    /*padding-top: 5px;
+    padding-bottom: 0;*/
+    vertical-align: middle;
+}
+.navbar .navbar-header .navbar-brand {
+    float: left;
+
+    /* Overriding default values */
+    height: unset;
+    /*padding: unset;*/
+    font-size: inherit;
+    line-height: unset;
+}
+.navbar-header .fa
+{
+    display: inline-table;
+}
+.navbar-header .fa-bars
+{
+    color: #999;
+}
+.navbar-header .fa-bars:hover
+{
+    color: #fff;
+}
+
+
+.navbar .navbar-header .navbar-brand .registry-label
+{
+    color: #ccc;
+    font-size: 9.5pt;
+    position: absolute;
+    margin-top: 2px;
+}
+#search-critera
+{
+    float: right;
+    width: 200px;
+}
+.input-group
+{
+    display: inline-table;
+    margin: 10px 5px 0 30px;
+    width: 360px;
+}
+.whiteIcon
+{
+    color: #fff;
+}
+#userName
+{
+    color: #fff;
+    font-size: 9.5pt;
+}
+
+
+
+
+
+
+/* The page footer */
+#footer  {
+    background-color: #535353;
+    background-repeat: no-repeat;
+    -webkit-filter: none;
+    color: #ffffff;
+    padding-top: 60px;
+    height: 150px;
+}
+#footer *
+{
+    font-size: 9pt;
+}
+#footer a:link, #footer a:visited
+{
+    color: #A3D55D;
+}
+#footer a:hover
+{
+    color: #F4C300;
+}
+#footer a:active
+{
+    color: #A3D55D;
+}
+.smallText
+{
+    font-size: 9pt;
+}
+
+
+
+/* Standard sections of a virtual page displayed in the application container panel. */
+.page-container {
+    margin: 15px 0 0 0;
+}
+.page-title {
+    font-size: 24pt;
+    font-weight: 700;
+    margin: 15px 0 15px 0;
+}
+.page-body {
+
+}
+
+/* A table with rows that contain a label and input control. */
+.page-body .edit-table {
+
+}
+.page-body .edit-table th {
+    color: #808080;
+    font-size: 14pt;
+    font-weight: 700;
+    padding: 0 10px 10px 0;
+    text-align: right;
+}
+.page-body .edit-table td {
+    padding: 0 0 10px 0;
+}
+.page-body .edit-table input, 
+.page-body .edit-table textarea, 
+.page-body .edit-table select {
+    font-size: 12pt;
+    padding: 1px;
+} 
+
+/* A table with a header row and one or more data rows. */
+.page-body .list-table {
+
+}
+.page-body .list-table tr {
+
+}
+.page-body .list-table .header-row {
+
+}
+.page-body .list-table .header-row th {
+    color: #999;
+    font-size: 12pt;
+    padding: 0 0 10px 0;
+}
+.page-body .list-table td {
+    font-size: 14pt;
+    padding: 0 5px 10px 0;
+}
+
+
+/* Widgets/controls */
+
+.table-button {
+    font-size: 12pt;
+    padding: 3px 15px 3px 15px;
+}
+.wide-button {
+    font-size: 14pt;
+    padding: 10px 0;
+    width: 100%;
+}
+
+
+
+/* Frequently used colors (mostly named like Bootstrap colors/themes) */
+.ui-color-ignore {
+    color: #999;
+}
+.ui-color-info {
+    color: #31b0d5;
+}
+.ui-color-normal {
+    color: #000;
+}
+.ui-color-primary {
+    color: #337ab7;
+}
+.ui-color-success {
+    color: #5cb85c;
+}
+.ui-color-danger {
+    color: #c9302c;
+}
+.ui-color-warning {
+    color: #ec971f;
+}
+
+
+/* Override Bootstrap and jQuery CSS */
+.btn {
+    border-radius: 0;
+}
+
+i.pencil-icon {
+    color: #5cb85c;
+    cursor: pointer;
+    font-size: 14pt;
+}
+i.pencil-icon:hover {
+    color: #4cae4c;
+    cursor: pointer;
+    font-size: 14pt;
+}
+.ui-dialog {
+    z-index: 999;
+}
+
+
+/* Modal dialogs */
+.modal-header {
+    background-color: #535353;
+}
+.modal-header .modal-title {
+    color: #fff;
+    /*font-size: 16pt;*/
+}
+
+.modal-dialog .modal-body label {
+    font-weight: 700;
+}
+
+
+
+
+
+.sectionTitle {
+    font-size: 16pt; /*12pt;*/
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.sectionTitleCount {
+    display: inline-table;
+    margin-right: 5px;
+}
+
+.sectionPanel {
+    margin-bottom: 30px;               
+}
+
+
+
+/* Icons */
+.history-icon {
+    font-size: 12pt;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.fake-link {
+    color: #428bca;
+    cursor: pointer;
+}
+.fake-link:hover {
+    color: #428bca;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.successful-result {
+    color: #5cb85c;
+    font-size: 16pt;
+}
+.failed-result {
+    color: #d14836;
+    font-size: 16pt;
+}
+

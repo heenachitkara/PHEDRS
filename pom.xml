@@ -1,0 +1,153 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.uab.ii</groupId>
+  <artifactId>RegistryWS</artifactId>
+  <version>0.1</version>  
+  <packaging>war</packaging>
+
+  <properties>
+      <java.version>1.8</java.version>
+      <spring.orm.version>4.2.5.RELEASE</spring.orm.version>
+      <hibernate.version>4.3.5.Final</hibernate.version>
+      <oracle.jdbc.version>12.1.0.1</oracle.jdbc.version>
+      <apache.commons.version>2.1.1</apache.commons.version>
+      <junit.version>4.12</junit.version>
+      <phedrsorm.version>0.0.25</phedrsorm.version>
+      <maven.tomcat.server>mytomcat</maven.tomcat.server>
+      <maven.tomcat.url>http://localhost:8080/RegistryWS</maven.tomcat.url>
+  </properties>
+    
+  <parent>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-parent</artifactId>
+	  <version>1.3.3.RELEASE</version>
+  </parent>
+
+  <dependencies>
+  	  <!-- Spring Boot Starter dependencies below -->
+	  <dependency>
+	      <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-web</artifactId>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-tomcat</artifactId>
+		  <scope>provided</scope>		  
+	  </dependency>
+	  <!--  Spring Boot Health -->
+	  <dependency>
+	      <groupId>org.springframework.boot</groupId> 	
+          <artifactId>spring-boot-starter-actuator</artifactId>
+      </dependency>            
+	  
+	  <!-- Spring ORM/Oracle/JDBC dependencies below -->
+	  <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+      </dependency>             
+	  <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-dbcp2</artifactId>
+          <version>${apache.commons.version}</version>
+      </dependency>	  
+	  <dependency>
+		  <groupId>com.oracle</groupId>
+		  <artifactId>ojdbc7</artifactId>
+		  <version>${oracle.jdbc.version}</version>		  
+	  </dependency> 	
+	  <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>${spring.orm.version}</version>
+      </dependency>
+
+       <dependency>
+    <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+            <version>4.2.1.RELEASE</version>
+            </dependency>
+
+
+      
+      <!-- Hibernate dependencies -->
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-core</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>   
+  	  
+  	  <!-- JUNIT testing dependencies below -->
+  	  <dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>${junit.version}</version>
+	  </dependency>	  
+	  
+	  <!-- PhedrsORM Library -->  	
+  	  <dependency>
+		  <groupId>edu.uab.ii</groupId>
+		  <artifactId>PhedrsOrm</artifactId>
+		  <version>${phedrsorm.version}</version>
+		  <type>jar</type>		  
+	  </dependency>
+<!--
+	  <dependency>
+		  <groupId>edu.uab.ii</groupId>
+		  <artifactId>PhedrsOrm</artifactId>
+		  <version>${phedrsorm.version}</version>
+		  <type>jar</type>
+		  <classifier>sources</classifier>		  
+	  </dependency>
+-->
+  </dependencies>
+
+  <build>
+  		<finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+        			<mainClass>edu.uab.registry.RegistryWSApp</mainClass>        			
+      			</configuration>
+            </plugin> 
+            <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>{tomcat-maven-plugin.version}</version>
+				<configuration>
+					<url>${maven.tomcat.url}</url>
+					<server>${maven.tomcat.server}</server>
+					<path>/${project.artifactId}</path>
+					<update>true</update>        			
+				</configuration>
+			</plugin>                     			
+        </plugins>
+  </build>
+    
+  <repositories>
+      <repository>
+          <id>spring-releases</id>
+          <url>https://repo.spring.io/libs-release</url>
+      </repository>
+  </repositories>
+    
+  <pluginRepositories>
+      <pluginRepository>
+          <id>spring-releases</id>
+          <url>https://repo.spring.io/libs-release</url>
+      </pluginRepository>
+  </pluginRepositories>  
+    
+</project>

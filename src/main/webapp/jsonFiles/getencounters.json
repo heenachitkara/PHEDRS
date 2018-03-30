@@ -1,0 +1,104 @@
+{
+  "webservice_status": {
+    "status": "SUCCESS",
+    "message": ""
+  },
+  "registry_patient": null,
+  "patient_demographics": null,
+  "nlp_document_list": null,
+  "registry_encounters_list": [
+    {
+      "mrn": "3014973",
+      "startDate": "2016-04-11",
+      "endDate": "2016-04-12",
+      "encounterTypeClassRef": "389",
+      "encounterTypeDescription": "EMERGENCY",
+      "admitLoc": "675397",
+        "admitLocDescription": "University Emergency Department",
+        "definedAttrib": "COPD,ICD9",
+        "reason_for_visit_txt": "AAA MEDICARE SCREENING"
+    },
+    {
+      "mrn": "3014973",
+      "startDate": "2016-03-24",
+      "endDate": "2016-03-26",
+      "encounterTypeClassRef": "391",
+      "encounterTypeDescription": "INPATIENT",
+      "admitLoc": "675397",
+        "admitLocDescription": "University Emergency Department",
+            "definedAttrib": "COPD,ICD9",
+        "reason_for_visit_txt": "ASTHMA"
+    },
+    {
+      "mrn": "3014973",
+      "startDate": "2016-03-17",
+      "endDate": "2016-04-01",
+      "encounterTypeClassRef": "393",
+      "encounterTypeDescription": "OUTPATIENT",
+      "admitLoc": "679555",
+        "admitLocDescription": "TKC Nephrology",
+        "definedAttrib": "COPD,ICD9",
+        "reason_for_visit_txt": "S/P AORTIC VALVE RELLACEMENT"
+    }
+  ],
+  "registry_encounter_attributes_list": [
+    {
+      "mrn": "3014973",
+      "code_value": "190",
+      "code_assignment_date": "2016-04-19 11:45:25.0",
+      "code_type": 8,
+      "code_description": "COPD w MCC",
+      "name": "DRG Codes"
+    },
+    {
+      "mrn": "3014973",
+      "code_value": "J44.9",
+      "code_assignment_date": "2016-04-11 05:00:00.0",
+      "code_type": 7,
+      "code_description": "Chronic obstructive pulmonary disease, unspecified",
+      "name": "UAB ICD-10-CM Codes"
+    },
+    {
+      "mrn": "3014973",
+      "code_value": "J44.1",
+      "code_assignment_date": "2016-03-26 05:00:00.0",
+      "code_type": 7,
+      "code_description": "Chronic obstructive pulmonary disease with (acute) exacerbation",
+      "name": "UAB ICD-10-CM Codes"
+    },
+    {
+      "mrn": "3014973",
+      "code_value": "J45.909",
+      "code_assignment_date": "2016-03-23 05:00:00.0",
+      "code_type": 7,
+      "code_description": "Unspecified asthma, uncomplicated",
+      "name": "UAB ICD-10-CM Codes"
+    },
+    {
+      "mrn": "3014973",
+      "code_value": "J44.1",
+      "code_assignment_date": "2016-03-23 05:00:00.0",
+      "code_type": 7,
+      "code_description": "Chronic obstructive pulmonary disease with (acute) exacerbation",
+      "name": "UAB ICD-10-CM Codes"
+    },
+    {
+      "mrn": "3014973",
+      "code_value": "D47.2",
+      "code_assignment_date": "2016-03-23 05:00:00.0",
+      "code_type": 7,
+      "code_description": "Monoclonal gammopathy",
+      "name": "UAB ICD-10-CM Codes"
+    },
+    {
+      "mrn": "3014973",
+      "code_value": "D47.2",
+      "code_assignment_date": "2015-12-14 06:00:00.0",
+      "code_type": 7,
+      "code_description": "Monoclonal gammopathy",
+      "name": "UAB ICD-10-CM Codes"
+    }
+  ],
+  "registry_patient_diagnosis_codes_list": null,
+  "registry_all_patient_attribute_list": null
+}

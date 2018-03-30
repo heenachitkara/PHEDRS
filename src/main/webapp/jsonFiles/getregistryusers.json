@@ -1,0 +1,74 @@
+{
+  "webservice_status" : {
+    "status" : "SUCCESS",
+    "message" : ""
+  },
+  "registry_users_list" : [ {
+    "user_id" : 484,
+    "username" : "akhare",
+    "full_name" : "Adarsh Khare",
+    "registry_list" : [ {
+      "id" : 2861,
+      "name" : "UAB COPD Registry",
+      "role" : {
+        "role_id" : 3042,
+        "role_name" : "Administrator"
+      }
+    } ]
+  }, {
+    "user_id" : 282,
+    "username" : "assamal",
+    "full_name" : "Abakash Samal",
+    "registry_list" : [ {
+      "id" : 2861,
+      "name" : "UAB COPD Registry",
+      "role" : {
+        "role_id" : 3041,
+        "role_name" : "Registrar"
+      }
+    }, {
+      "id" : 2689,
+      "name" : "UAB Multiple Myeloma Registry",
+      "role" : {
+        "role_id" : 3042,
+        "role_name" : "Administrator"
+      }
+    } ]
+  }, {
+    "user_id" : 583,
+    "username" : "ddempsey",
+    "full_name" : "don dempsey",
+    "registry_list" : [ {
+      "id" : 2861,
+      "name" : "UAB COPD Registry",
+      "role" : {
+        "role_id" : 3042,
+        "role_name" : "Administrator"
+      }
+    } ]
+  }, {
+    "user_id" : 273,
+    "username" : "josborne",
+    "full_name" : "John Osborne",
+    "registry_list" : [ {
+      "id" : 2861,
+      "name" : "UAB COPD Registry",
+      "role" : {
+        "role_id" : 3042,
+        "role_name" : "Administrator"
+      }
+    } ]
+  }, {
+    "user_id" : 48,
+    "username" : "mwyatt",
+    "full_name" : "Matt Wyatt",
+    "registry_list" : [ {
+      "id" : 2861,
+      "name" : "UAB COPD Registry",
+      "role" : {
+        "role_id" : 3042,
+        "role_name" : "Administrator"
+      }
+    } ]
+  } ]
+}

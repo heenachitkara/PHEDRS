@@ -1,0 +1,835 @@
+﻿/*-----------------------------------*/
+/*----- global ----------------------*/
+/*-----------------------------------*/
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    /*background: #f3f4f6;*/
+   /* background: #f3f4f6 url('/images/header_bg.png?v=4') no-repeat right top;*/ /*Commenting on Nov 13 because it throws error as its not available*/
+    min-width: 1000px;/* i need this for the grid, if the window gets to small the grid starts throwing errors */
+}
+
+br.clearFix {display:block; width:100%; height:0px; font-size:0px; clear:both; visibility:hidden;}
+
+#wrapper{
+    /*width: 100%;*/
+    position:relative;
+    height: 100%;
+    min-height: 100px;
+}
+#main-container{
+    margin-top: 50px;
+}
+#main-container .jqx-widget-header{
+    background: #FAF1E3;
+}
+.jqx-grid-cell{
+    cursor: pointer;
+}
+
+.rdiv{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top:10px;
+}
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:9999;
+    overflow: auto;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+.spinner2{
+    position: absolute;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:3234;
+    overflow: auto;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+.error{
+    color: red;
+    display: inline-block;
+}
+
+#welcometitle{
+    color:#ffffff;
+    padding: 8px 0 0 20px;
+    font-size: 16px;
+}
+#welcometitle .icon-user{
+    margin-top:5px;
+    margin-right:3px;
+}
+
+.modal-backdrop, .modal-backdrop fade in {
+    background: transparent;
+}
+/*-----------------------------------*/
+/*----- header -------------------*/
+/*-----------------------------------*/
+#header-search{
+    margin-top:5px;
+}
+#usersname{
+    display: inline-block;
+}
+/*-----------------------------------*/
+/*----- poid-snip -------------------*/
+/*-----------------------------------*/
+
+#plist-header{
+    height: 72px;
+}
+
+#poid-search-input{
+    display: inline;
+}
+#middiv #button-next{
+    position: absolute;
+    left: 210px;
+    top:50px;
+    width: 400px;
+    z-index: 999;
+}
+
+.poid-status{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top:10px;
+}
+.poid-status-new{
+    color: #619539;
+    font-weight: bolder;
+}
+#poids-padding{
+    height: 20px;
+}
+.dhitsel{
+    background: #bfdbd0;
+}
+
+.phitsel{
+    background: #fdb913;
+}
+.caseynsel{
+    /*
+    background: #619539;
+    color:#ffffff;
+    */
+}
+.casereject{
+    /*
+    background: #9bac8e;
+    color:#ffffff;
+    */
+}
+.followuphit{
+    background: #fed97d;
+    color:#000000;
+}
+.grid-assigned_to{
+    margin-top:10px;
+    text-align: center;
+}
+.grid-but-group{
+    margin: 5px auto 0 auto;
+    text-align: center;
+    width:100%;
+}
+.grid-but-group .but{
+    margin: auto;
+    text-align: center;
+}
+
+
+
+#clearfilters{
+    margin-left: 10px;
+}
+#gridops{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+#poid-search-cont{
+    padding-right: 5px;
+    padding-top: 6px;
+    border: 1px solid #AAAAAA;
+    background: #FAF1E3;
+    font-size: 14px;
+    font-weight: bolder;
+    height: 37px;
+    position: absolute;
+    right: -2px;
+    width: 144px;
+    top: -5px;
+}
+
+#middiv .jqx-grid-column-header{
+    font-size: 16px;
+    font-weight: bolder;
+}
+#poid-data-type .nav-tabs a{
+    font-size: 16px;
+    font-weight: bolder;
+}
+#jqxgrid .admin-cell{
+    height: 100%;
+}
+#jqxgrid .admin-cell:hover{
+    background: #f2ad81;
+    height: 100%;
+}
+#jqxgrid .admin-assign{
+    padding-top: 10px;
+    text-align: center;
+    height: 100%;
+    background: url('/images/assign.png') no-repeat 25px 10px transparent;
+}
+#jqxgrid .admin-assign:hover{
+    background: url('/images/assignHover.png') no-repeat 25px 10px transparent;
+}
+
+#jqxgrid .grid-diagnosis{
+    padding-top: 10px;
+    text-align: center;
+    height: 100%;
+    background: url('/images/show_diag.png') no-repeat 25px 10px transparent;
+}
+#jqxgrid .grid-diagnosis:hover{
+    background: url('/images/show_diag.png') no-repeat 25px 10px #f2ad81;
+}
+
+
+
+#jqxgrid .admin-history{
+    padding-top: 10px;
+    text-align: center;
+    height: 100%;
+    background: url('/images/history.png?v=2') no-repeat 25px 10px transparent;
+}
+#jqxgrid .admin-history:hover{
+    background: url('/images/history.png?v=2') no-repeat 25px 10px transparent;
+}
+
+#adminModal .modal-header h3 span{
+    font-weight: normal;
+    font-size: 65%;
+}
+
+#doc-diagnosis-data table{
+    width: 100%;
+}
+
+#doc-history-data table tr th, #doc-diagnosis-data table tr th{
+    background: #FAF1E3;
+    padding: 5px 10px;
+}
+
+#doc-history-data table tr td, #doc-diagnosis-data table tr td{
+    padding: 5px 10px;
+    text-align: left;
+    background: #ffffff;
+}
+#doc-history-data table tr.rodd td,#doc-diagnosis-data table tr.rodd td{
+    background: #efefef;
+}
+#adminModal #avail-status{
+    display: inline-block;
+    width: 200px;
+    float: left;
+    margin-left: 200px;
+}
+.foundrow td{
+    background: #c5dad1 !important;
+}
+
+
+/*-----------------------------------*/
+/*----- review-snip -----------------*/
+/*-----------------------------------*/
+
+#getnextpoi-review{
+    margin-left:80px;
+}
+
+#review-actions{
+    height: 45px;
+    padding-top: 20px;
+}
+#review-container #review-status{
+    display: inline-block;
+    font-size: 20px;
+    height: 25px;
+    margin-left: 100px;
+    padding-top: 3px;
+    vertical-align: middle;
+    width: 300px;
+}
+
+#review-container #review-info table th{
+    border: none;
+    text-align: right;
+}
+
+#demog-container {
+    border: 1px solid #C7C7C7;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-border: 4px;
+    margin-bottom: 5px;
+    /*background: #FAF1E3;*/
+    background: #faf1e3;
+    /*width: 715px;*/
+    padding: 0 1px 0 10px ;
+}
+
+
+#demog-container li.demog-expand div{
+    text-align: right;
+    float: right;
+}
+#demog-container li.demog-expand div a, #doc-view-hdr #review-doc-full-screen a{
+    padding-right: 20px!important;
+    display:block;
+    height:20px;
+    text-indent:-9999px;
+    width:0px;
+    margin: auto;
+    overflow: hidden;
+}
+#demog-container li.demog-expand div a.exp-info-link{
+    background: url('/images/details-icon.png') no-repeat right top transparent;
+}
+#demog-container li.demog-expand div a.colps-info-link{
+    background: url('/images/details-icon-close.png') no-repeat right top transparent;
+}
+#review-container #doc-view-hdr a.exp-doc-link{
+    background: url('/images/details-icon.png') no-repeat right top transparent;
+}
+
+
+
+#demog-container li, #demog-container ul{
+    margin:0;
+}
+#demog-container li{
+    width: 33%;
+    padding:0;
+}
+
+#demog-container li label{
+    font-size: 16px;
+    font-weight: bolder;
+    display: inline-block;
+}
+#demog-expand-table th, #demog-expand-table td{
+    font-size: 16px;
+    padding: 5px;
+}
+#demog-expand-table td{
+    text-align: left;
+}
+
+
+#review-document{
+    min-height: 300px;
+}
+#review-document #concepts-selected{
+    width: 200px;
+}
+#doc-view{
+}
+#doc-view .the-doc{
+    height: 600px;
+    overflow:auto;
+    display: inline-block;
+    background: #ffffff;
+    padding: 10px;
+    width: 97%;
+   /* width: 70%;*/
+}
+#doc-view .the-doc span.ws {
+    background: yellow;
+    cursor: pointer;
+}
+
+#doc-view .popover p{
+    font-style: italic;
+}
+
+#doc-view .the-doc span.s_is_negated{
+    /*background: #DB0E09;*/
+    color: red;
+}
+
+#doc-view .docr_word_selected, #doc-view .docr_word_selected_isneg{
+    /*background: #8bff00 !important;*/
+    border: 1px solid #000000;
+    padding: 2px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+
+}
+#doc-right .concept-list li.hrec_li_selected{
+    background: #efefef;
+}
+#doc-right .concept-list li.hrec_li_selected_isneg{
+    background: #efefef !important;
+}
+
+#doc-right .concept-list li div{
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    right:0;
+    top:0;
+    background: transparent url('/images/red_slash.png') no-repeat;
+    display:none;
+}
+
+#doc-view .docr_word_selected_isneg{
+    /*background: #d3ff48 !important;*/
+}
+
+
+#doc-right .concept-list li{
+    cursor: pointer;
+}
+#doc-right .concept-list li:hover{
+    /*background: #efefef;*/
+    text-decoration: underline;
+}
+
+#doc-left{
+    margin-left:0;
+}
+#doc-left .pagination{
+    margin-bottom: 1px;
+}
+
+#doc-right{
+    margin: 0px 0 0 40px;
+    position: relative;
+    /* margin: 0px 1100px 800px 940px;*/
+   
+    /*position: fixed;*/
+    /*position: static;*/
+}
+
+#doc-right #concepts-select{
+    color: #575743;
+   /* background-color: #F3E6D3;*/
+    background-color: #E5E4D7;
+    font-weight: 550;
+    margin-bottom: 0;
+}
+
+
+#doc-right #concept-header{
+   
+    background: #E5E4D7;
+    height: 30px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top: 1px solid #C7C7C7;
+    border-left: 1px solid #C7C7C7;
+    border-right: 1px solid #C7C7C7;
+    width: 150px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 135%;
+}
+
+
+
+#doc-right #concepts-lists{
+    height: 300px;
+    overflow-y: auto;
+    /*width: 220px;*/
+    width: 150px;
+}
+
+
+#doc-right .concept-list li{
+    border-color: #AAAAAA;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    background: #ffffff;
+    color: #000000;
+    min-height: 25px;
+    /*width: 195px;*/
+    margin-left:0px;
+    padding: 5px 0 0 5px;
+    position: relative;/* this is for the div inside */
+}
+#doc-right .concept-list li.l_is_negated {
+    font-style: italic;
+    background: #ffffff;
+    color: black;
+    text-decoration: line-through;
+
+}
+
+
+#pat-review a{
+    cursor: default;
+}
+
+#review-right{
+    margin-top: 74px;
+}
+#review-right #diagslist{
+    width:210px;
+    margin-left:14px;
+}
+
+#review-right #diagslist #diagstable{
+    height: 211px;
+    overflow-y: scroll;
+}
+#review-right #diagslist td {
+
+}
+#review-right #diagslist td:first-child {
+    width:40px;
+}
+#review-right #diagslist td:first-child  + td{
+    border-left: 1px solid #C7C7C7;
+}
+#review-right #diagslist tr:last-child{
+    border-bottom: 1px solid #C7C7C7;
+}
+
+#review-right #diagslist th{
+    /*background: #FAF1E3;*/
+    background: #E5E4D7;
+}
+
+#doc-left{
+}
+#doc-left #doc-view-hdr{
+    height: 30px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border: 1px solid #C7C7C7;
+    /*background: #F3E6D3;*/
+    background: #E5E4D7;
+    /*width:70%;*/
+    width:97%;
+}
+
+#doc-left #doc-view-hdr #review-doc-full-screen{
+    float: right;
+    padding:2px 2px 0 0;
+}
+
+#diagslist{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #C7C7C7;
+}
+
+#diagslist #diagstable, #diagslist #diagstable td{
+    background: #ffffff;
+}
+
+#review-right #diagslist .diagslisthdr{
+    display: inline-block;
+    float: left;
+    background: #FAF1E3;
+    margin:0;
+    height: 25px;
+    font-size: 135%;
+    font-weight: bolder;
+    padding:5px 0 0 10px;
+}
+#diagslisthdr-left{
+    width:46px;
+    width:46px\0;/*ie8 hack*/
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+}
+#diagslisthdr-right{
+    width:143px;
+    width:143px\0;/*ie8 hack*/
+    border-left:1px solid #C7C7C7;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+}
+#review-right #diagslist .dropdown-menu{
+    background-clip: padding-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    left: -60px;
+    min-width: 100px;
+    padding: 5px;
+}
+#review-right #diagslist .dropdown-menu li{
+    border-bottom: 1px solid #C7C7C7;
+}
+#doc-view-fullscreen{
+    z-index: 9999;
+    display:none;
+    position: absolute;
+    margin: auto;
+    top:2px;
+    background: #ffffff;
+    border:1px solid #1f6747;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+#doc-view-fullscreen #doc-fullscreen-data{
+    padding:20px;
+    overflow: auto;
+    height: 100%;
+}
+#doc-view-fullscreen #doc-fullscreen-hdr{
+    height: 20px;
+    /*background:#F3E6D3;*/
+    background: #E5E4D7;
+    text-align: right;
+    padding: 2px;
+    cursor: move;
+}
+#doc-view-fullscreen #doc-fullscreen-hdr a{
+    float: right;
+    padding-right: 20px!important;
+    display:block;
+    height:20px;
+    text-indent:-9999px;
+    width:0px;
+    margin: auto;
+    overflow: hidden;
+    background: url('/images/closeicon.png') no-repeat right top transparent;
+}
+#doc-view-fullscreen #doc-fullscreen-hdr a:hover{
+    background: url('/images/closeiconhover.png') no-repeat right top transparent;
+}
+
+/*-----------------------------------*/
+/*----- add-snip --------------------*/
+/*-----------------------------------*/
+#addpoi-padding{
+    height: 25px;
+}
+#addpoi-forms{
+    padding-top: 20px;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    background: #ffffff;
+}
+#addpoi-forms #inputAddress{
+    width: 430px;
+}
+
+#addpoi-form .controls {
+    margin-left: 10px;
+}
+
+#addpoi-form .control-group #address input{
+    margin-top: 6px;
+}
+
+
+#addpoi-form .control-label{
+    float: none;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 20px;
+    display: inline-block;
+    width: 200px;
+}
+
+
+#poiinfo > div {
+    border-top: 1px solid #C7C7C7;
+    /*
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-border: 4px;
+    margin-bottom: 5px;
+    */
+    background :#ffffff;
+    /*width: 715px;*/
+}
+
+#poiinfo .table th,
+#poiinfo .table td{
+    border: none;
+}
+
+#poiinfo .table thead th,
+#poiinfo .table thead td{
+    background: #FAF1E3;
+    font-size: 135%;
+    font-weight: bolder;
+
+}
+#poiinfo .table thead th,
+#poiinfo .table thead td{
+    vertical-align: top;
+}
+
+/*-----------------------------------*/
+/*----- admin-snip ------------------*/
+/*-----------------------------------*/
+#admin-userlist .tr-u-false{
+    display: none;
+    color: red;
+}
+
+
+/*-----------------------------------*/
+/*----- adv_search-snip -------------*/
+/*-----------------------------------*/
+
+#advsrc-padding{
+    height: 20px;
+}
+
+#advsrc .controls .input-prepend{
+    width: 220px;
+}
+
+#advsrc #inputStatus{
+    width: 185px;
+}
+
+#advsrc #lrevlabel{
+
+    margin-left: 0px;
+    margin-left: 0px\0;/*ie8 hack*/
+}
+#advsrc #inputAssignedTo{
+    vertical-align: top;
+    margin-left: 35px;
+}
+
+#advsrc #src-dates{
+    position: relative;
+}
+#advsrc #src-dates label{
+    width: 100px;
+}
+
+#advsrc .iehintreplace{
+    color: #c6dcd2;
+    font-weight: 200px;
+    font-size: 80%;
+    padding-left: 30px;
+    display: none;
+    display: inline-block\0;/*ie8 hack*/
+    text-align: right;
+}
+#src-records-found{
+    font-size: 50%;
+    font-weight: 100;
+    padding-left: 20px;
+}
+/*-----------------------------------*/
+#mrnsrc_emessage{
+    font-size: 150%;
+    color: red;
+    margin-left: 30px;
+}
+
+#context-menu li{
+    padding: 1px 5px;
+}
+
+#selectect-text-div{
+    background: #ffffff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    padding: 5px;
+    border: 1px solid #DDDDDD;
+}
+
+.newSelectedConcept{
+    color: #f44501;
+    font-weight: bolder;
+}
+.falseNegConcept{
+    border-bottom: 1px solid #999999;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+#popup-menu-loading{
+    display: none;
+    height: 16px;
+    width: 16px;
+    background: url('images/ajax-loader-small.gif');
+    float: right;
+}
+
+/*Testing using this : https://stackoverflow.com/questions/40993854/multiple-div-in-same-line-bootstrap*/
+
+/*.col-xs-12 {
+  white-space: nowrap !important;
+  max-width: 100%;
+  overflow: auto;
+}
+.col-xs-31 {
+  float: none !important;
+  display: inline-block !important;
+}
+.col-xs-3 {
+  float: none !important;
+  display: inline-block !important;
+  width: 60%;
+}
+.col-xs-3 a {
+  height: 100px;
+  background: pink;
+  display: block;
+  margin-top: 10px;
+  padding: 10px
+}*/
+
+
+.row {
+  width: 100%;
+}
+
+
+
+.concept_block {
+  
+  width: 100px;
+  display: inline-block;
+  vertical-align: top; /*added this*/
+  text-align: center;
+  margin-top: 40cm; /*may need to adjust this*/
+  height:150px;
+}
+
+.document_block {
+   
+      width: 800px;
+     display: inline-block;
+     vertical-align: top; /*added this*/
+}

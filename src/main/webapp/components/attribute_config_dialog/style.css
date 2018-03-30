@@ -1,0 +1,139 @@
+
+
+#attribute_config_dialog .modal-dialog {
+      width: 1200px;
+}
+
+#attribute_config_dialog h3 {
+    color: #333;
+}
+
+
+.modal-body hr {
+    border-color: #999;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.enc-attr-table {
+    margin: 15px 0 30px 0;
+}
+.enc-attr-table * {
+    vertical-align: top;
+}
+.enc-attr-table .ctrl-column {
+    padding: 0 5px 15px 0;
+}
+.enc-attr-table .ctrl-column .enc-attr-ctrl {
+    width: 20px;
+    height: 20px;
+}
+.enc-attr-table .label-column {
+    font-weight: 700;
+    padding: 0 15px 15px 0;
+}
+.enc-attr-table .assignment-column {
+    padding: 0 0 15px 0;
+}
+.enc-attr-table .assignment-column * {
+    vertical-align: top;
+}
+
+/* Assigner and date */
+.last-assigned {
+
+}
+.last-assigned-label {
+    font-size: 10pt;
+    font-weight: 700;
+}
+textarea.assignment-comment {
+    padding: 3px;
+    width: 300px;
+}
+
+.attribute-edit-panel {
+    padding: 15px 0 15px 0;
+}
+
+.add-attribute-title {
+    font-size: 12pt;
+    margin: 0 0 5px 0;
+}
+.add-attribute-title .attribute-label {
+    display: inline-block;
+    font-size: 12pt;
+    font-weight: 700;
+}
+.attribute-comment {
+    padding: 3px;
+    width: 100%;
+}
+
+.enc-data-table {
+  margin: 0 0 45px 0;
+  width: 50%;
+}
+
+.enc-data-table th {
+  font-size: 12pt;
+  padding: 0 5px 5px 0;
+  text-align: right;
+}
+
+.enc-data-table td {
+  font-size: 12pt;
+  padding: 0 0 5px 0;
+}
+
+
+
+.insurance-data-table{
+  margin: 0 0 45px 0;
+  width: 50%;
+}
+
+.insurance-data-table th {
+  font-size: 12pt;
+  padding: 25px ;
+  /*text-align: right;*/
+}
+
+.insurance-data-table td {
+  font-size: 12pt;
+  padding: 0 0 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h3 {
+  font-size: 20px;
+}
+
+h3 {
+  width: 50%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+hr {
+  width: 100%
+}
+
+.inlineTable {
+            display: inline-block;
+        }
+

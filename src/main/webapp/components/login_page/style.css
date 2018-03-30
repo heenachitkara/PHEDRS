@@ -1,0 +1,21 @@
+﻿
+
+
+
+#login_page #login_button {
+    margin: 10px 0 0 0;
+}
+
+/* TEST */
+#login_page .page-body {
+    width: 400px;
+}
+
+#login_page .edit-table {
+    margin: 30px 0 15px 0;
+}
+
+#login_page .page-body .edit-table td,
+#login_page .page-body .edit-table td input {
+    width: 100%;
+}

@@ -1,0 +1,188 @@
+﻿
+
+<!-- <input type="button" id="loadState" value="Back to List" /> -->
+<div class="row">
+
+    <div class="col-sm-5">
+
+        <div id="patient_full_name"></div>
+
+        <div class="mrn-row">
+            <span class="row-label">MRN:</span><span id="mrn_values"></span>
+        </div>
+        <div class="race-gender-age-row">
+            <span id="patient_race"></span><span id="patient_gender"></span>,<span id="patient_age"></span>
+        </div>
+
+        <div class="dob-row">
+            <span class="row-label">DOB:</span><span id="dob_value"></span>
+        </div>
+
+        <div class="ssn-row">
+            <span class="row-label">SSN:</span><span id="ssn_value"></span>
+        </div>
+
+        <div class="address-row">
+            <span class="row-label">Address:</span><span id="patient_address"></span>
+        </div>
+
+        <div class="phone-row">
+            <span class="row-label">Phone:</span><span id="patient_phone"></span>
+        </div>
+    </div>
+    
+    <div class="col-sm-7 status-panels">
+        
+        <div class="status-latest">
+            <div class="status-label">Registry status:</div>
+            <div class="status-value" id="registry_status"></div>
+            <button class="btn btn-success btn-xs" id="edit_patient_registry_status" alt="Edit registry status">EDIT</button>
+            <button class="btn btn-primary btn-xs" id="status_history_link" alt="View status history">HISTORY</button>
+            <div id="registry_status_info"></div>
+        </div>
+        <div class="status-details">
+            <div class="details-who-when">
+                <span class="status-person" id="status_assigned_by"></span>
+                <span class="status-date" id="status_assigned_on"></span>
+            </div>
+            <div class="status-comment" id="status_comment"></div>
+        </div>
+
+        <div class="status-latest">
+            <div class="status-label">Owner:</div>
+            <div class="status-value" id="owner_name"></div>
+            <button class="btn btn-success btn-xs" id="edit_owner_name" alt="Edit owner name">EDIT</button>
+            <div id="owner_status_info"></div>
+            <div class="status-label">Score:</div>
+            <div class="status-value"  id=""> No Score Available</div> 
+
+
+
+        </div>
+
+        <div class="status-latest">
+            <div class="status-label">Workflow status:</div>
+            <div class="status-value" id="workflow_status"></div>
+            <button class="btn btn-success btn-xs" id="edit_patient_workflow_status" alt="Edit workflow status">EDIT</button>
+            <button class="btn btn-primary btn-xs" id="reviewstatus_history_link" alt="View workflow history">HISTORY</button>
+            <span id="workflow_status_info"></span>
+        </div>
+        <div class="status-details">
+            <div class="details-who-when">
+                <span class="status-person" id="reviewstatus_reviewed_by"></span>
+                <span class="status-date" id="reviewstatus_reviewed_on"></span>
+            </div>
+            <div class="status-comment" id="reviewstatus_comment"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- The "edit registry status" dialog -->
+<div id="patient_demographics_edit_registry_status_dialog" style="display:none;width:700px">
+
+    <div class="container-fluid edit-registry-status-dialog">
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-6" style="width:250px">
+                    <label>Registry Status</label>
+                   <!--  <select class="form-control registry-status"></select> --><!--Hiding this line and hardcoding till the time original code starts working  -->
+                   <!-- Hardcoding Below Values  -->
+                   <select class="form-control workflow-status">
+                            <option value="Accepted">Accepted</option>
+                            <option value="Candidate">Candidate</option>
+                            <option value="Provisional">Provisional</option>
+                            <option value="Rejected">Rejected</option>
+                  </select>
+                </div>
+                <div class="form-group col-sm-6" style="width:250px">
+                    <label>Comments</label>
+                    <textarea class="form-control registry-status-comment"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-2" style="width:100px">
+                <button class="btn btn-success center-block save-button" data-popmodal-but="ok">Save</button>
+            </div>
+            <div class="form-group col-sm-2" style="width:100px">
+                <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The "edit owner" dialog -->
+<div id="patient_demographics_edit_owner_name_dialog" style="display:none;width:700px">
+
+    <div class="container-fluid edit-owner-name-dialog">
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-6" style="width:250px">
+                    <label>Owner Name</label>
+                    <select class="form-control registry-status">
+                       <option>No data available!</option><!-- Remove option and use jQuery to populate names whenever available -->
+                    </select>
+                </div>
+                <div class="form-group col-sm-6" style="width:250px">
+                    <label>Comments</label>
+                    <textarea class="form-control registry-status-comment">No data available!</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-2" style="width:100px">
+                <button class="btn btn-success center-block save-button" data-popmodal-but="ok">Save</button>
+            </div>
+            <div class="form-group col-sm-2" style="width:100px">
+                <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The "edit workflow status" dialog -->
+<div id="patient_demographics_edit_workflow_status_dialog" style="display:none;width:700px">
+    
+    <div class="container-fluid edit-workflow-status-dialog">
+        <div class="search-form">
+            <div class="form-group">
+                <div class="row">
+                    <div class="form-group col-sm-3" style="width:250px">
+                        <label>Workflow Status</label>
+                        <select class="form-control workflow-status">
+                            <option value="Reviewed">Reviewed</option>
+                            <option value="NeedsReview">Needs Review</option>
+                            <option value="PatientNeverReviewed">Patient Never Reviewed</option>
+                            <option value="UnderReview">Under Review</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-3" style="width:250px">
+                        <label>Comments</label>
+                        <input type="text" class="form-control workflow-status-comment">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-2" style="width:100px">
+                    <button class="btn btn-success center-block save-button" data-popmodal-but="ok">Save</button>
+                </div>
+                <div class="form-group col-sm-2" style="width:100px">
+                    <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+                </div>
+            </div>
+            <!-- START for confirmmodal -->
+            <div style="display:none">
+                <div id="content">
+                    Are you sure, you want to Reject this Patient?
+                    <div class="popModal_footer">
+                        <button type="button" class="btn btn-success" data-confirmmodal-but="ok">Ok</button>
+                        <button type="button" class="btn btn-success" data-confirmmodal-but="cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END for confirmmodal -->
+        </div>
+    </div>
+
+</div>

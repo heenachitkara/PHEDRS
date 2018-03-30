@@ -1,0 +1,255 @@
+
+
+#encounter_attributes_dialog .modal-dialog {
+    width: 900px;
+}
+
+#encounter_attributes_dialog h3 {
+    color: #333;
+}
+
+/*.enc-data-table {
+    margin: 0 0 45px 0;
+}
+.enc-data-table th {
+    font-size: 12pt;
+    
+    padding: 0 5px 5px 0;
+    text-align: right;
+}
+.enc-data-table td {
+    font-size: 12pt;
+    padding: 0 0 5px 0;
+}
+
+
+ .enc-data-table th{
+        width:20%
+    }
+ .enc-data-table tr{
+        width:80%
+ }*/
+
+
+#encounter_location {
+
+}
+#encounter_type {
+
+}
+#encounter_dates {
+
+}
+#encounter_reason {
+
+}
+
+.modal-body hr {
+    border-color: #999;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.enc-attr-table {
+    margin: 15px 0 30px 0;
+}
+.enc-attr-table * {
+    vertical-align: top;
+}
+.enc-attr-table .ctrl-column {
+    padding: 0 5px 15px 0;
+}
+.enc-attr-table .ctrl-column .enc-attr-ctrl {
+    width: 20px;
+    height: 20px;
+}
+.enc-attr-table .label-column {
+    font-weight: 700;
+    padding: 0 15px 15px 0;
+}
+.enc-attr-table .assignment-column {
+    padding: 0 0 15px 0;
+}
+.enc-attr-table .assignment-column * {
+    vertical-align: top;
+}
+
+/* Assigner and date */
+.last-assigned {
+
+}
+.last-assigned-label {
+    font-size: 10pt;
+    font-weight: 700;
+}
+textarea.assignment-comment {
+    padding: 3px;
+    width: 300px;
+}
+
+.attribute-edit-panel {
+    padding: 15px 0 15px 0;
+}
+
+.add-attribute-title {
+    font-size: 12pt;
+    margin: 0 0 5px 0;
+}
+.add-attribute-title .attribute-label {
+    display: inline-block;
+    font-size: 12pt;
+    font-weight: 700;
+}
+.attribute-comment {
+    padding: 3px;
+    width: 100%;
+}
+
+
+/* The control row template */
+#encounter_attributes_panel {
+    margin: 5px 0 15px 0;
+}
+
+#encounter_attributes_panel .attributes-table {
+    width: 100%;
+}
+#encounter_attributes_panel .attributes-table * {
+    font-size: 11pt;
+    vertical-align: top;
+}
+#encounter_attributes_panel .attributes-table .attribute-header-row th {
+    color: #999;
+    font-size: 10pt;
+}
+#encounter_attributes_panel .assigned-attribute-control-row {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+}
+#encounter_attributes_panel .assigned-attribute-control-row td {
+    padding: 5px 0 10px 0;
+}
+#encounter_attributes_panel .assigned-attribute-label {   
+    font-weight: 700;
+    width: 25%;
+}
+#encounter_attributes_panel .assigned-column {
+    width: 30%;
+}
+    #encounter_attributes_panel .last-assigned-info {
+        display: inline-block; 
+        vertical-align: top;
+    }
+    #encounter_attributes_panel .assigned-comment {
+        font-style: italic;
+        vertical-align: top;
+    }
+
+    .new-comment-panel {
+        margin: 5px 0 10px 0;
+    }
+    .new-comment-panel * {
+        font-size: 10pt;
+    }
+    .new-comment-panel .comment-ctrl {
+        margin: 0 5px 5px 0;
+        padding: 3px;
+        width: 100%;
+    }
+
+#encounter_attributes_panel .drg-column {
+    width: 15%;
+}
+#encounter_attributes_panel .attribute-ctrls-column {
+    text-align: right;
+    width: 30%;
+ }
+#encounter_attributes_panel .attribute-ctrls-column  * {
+    font-size: 10pt;
+}
+
+/* For Headings */
+/*h3 {
+  font-size: 20px;
+}
+
+  h3 {
+  width: 50%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+hr{
+   
+    width: 100%
+}*/
+
+.enc-data-table {
+  margin: 0 0 45px 0;
+  width: 50%;
+}
+
+.enc-data-table th {
+  font-size: 12pt;
+  padding: 0 5px 5px 0;
+  text-align: right;
+}
+
+.enc-data-table td {
+  font-size: 12pt;
+  padding: 0 0 5px 0;
+}
+
+
+
+.insurance-data-table{
+  margin: 0 0 45px 0;
+  width: 50%;
+}
+
+.insurance-data-table th {
+  font-size: 12pt;
+  padding: 25px ;
+  /*text-align: right;*/
+}
+
+.insurance-data-table td {
+  font-size: 12pt;
+  padding: 0 0 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h3 {
+  font-size: 20px;
+}
+
+h3 {
+  width: 50%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+hr {
+  width: 100%
+}
+
+.inlineTable {
+            display: inline-block;
+        }
+

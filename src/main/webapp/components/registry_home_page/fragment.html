@@ -1,0 +1,156 @@
+
+
+
+<div id="copd_home_page" class="page-container" style="display:none;">
+    <!-- <input type="button" id="saveState" value="Save State" /> -->
+    <!-- <input type="button" id="loadState" value="Load State" /> -->
+    <!-- The workflow tabs -->
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+            <a data-toggle="tab" id="tab_REGISTRY_INPATIENT_REVIEW" href="#panel_REGISTRY_INPATIENT_REVIEW">Potential COPD exacerbation admissions <span id="count_REGISTRY_INPATIENT_REVIEW" class="countLabel"></span></a>
+        </li>
+
+        <!-- <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_ninety_day_window" href="#panel_ninety_day_window">90 day window <span id="count_ninety_day_window" class="countLabel"></span></a>
+        </li> -->
+
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_90_DAY_WINDOW" href="#panel_90_DAY_WINDOW">90 day window <span id="count_90_DAY_WINDOW" class="countLabel"></span></a>
+        </li>
+
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_90_DAY_WINDOW_MEDICARE" href="#panel_90_DAY_WINDOW_MEDICARE">90 day window medicare <span id="count_90_DAY_WINDOW_MEDICARE" class="countLabel"></span></a>
+        </li>
+
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_REGISTRY_INPATIENT" href="#panel_REGISTRY_INPATIENT">Relaxed criteria<span id="count_REGISTRY_INPATIENT" class="countLabel"></span></a>
+        </li>
+
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_ALL_REGISTRY_PATIENTS" href="#panel_ALL_REGISTRY_PATIENTS">All registry patients <span id="count_ALL_REGISTRY_PATIENTS" class="countLabel"></span></a>
+        </li>
+    </ul>
+    <div class="tab-content">
+
+        <!-- Potential COPD exacerbation admissions -->
+        <div id="panel_REGISTRY_INPATIENT_REVIEW" class="tab-pane fade in active" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_REGISTRY_INPATIENT_REVIEW"></div>
+            </div>
+        </div>
+
+
+        <div id="panel_90_DAY_WINDOW" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_90_DAY_WINDOW"></div>
+            </div>
+        </div>
+
+        <!-- ninety day window medicare -->
+        <div id="panel_90_DAY_WINDOW_MEDICARE" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_90_DAY_WINDOW_MEDICARE"></div>
+            </div>
+        </div>
+
+        <!-- Current patient admissions -->
+        <div id="panel_REGISTRY_INPATIENT" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_REGISTRY_INPATIENT"></div>
+            </div>
+        </div>
+
+        <!-- All registry patients -->
+        <div id="panel_ALL_REGISTRY_PATIENTS" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_ALL_REGISTRY_PATIENTS"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div id="crcp_home_page" style="display:none;">
+
+    <br /><br />
+
+    <!-- The workflow tabs -->
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+            <a data-toggle="tab" id="tab_potential_exacerbations" href="#panel_potential_exacerbations">Potential COPD exacerbation admissions <span id="count_potential_exacerbations" class="countLabel"></span></a>
+        </li>
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_ninety_day_window" href="#panel_ninety_day_window">90 day window <span id="count_ninety_day_window" class="countLabel"></span></a>
+        </li>
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_current_patient_admissions" href="#panel_current_patient_admissions">Current patient admissions <span id="count_current_patient_admissions" class="countLabel"></span></a>
+        </li>
+    </ul>
+    <div class="tab-content">
+
+        <!-- Potential COPD exacerbation admissions -->
+        <div id="panel_potential_exacerbations" class="tab-pane fade in active" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_potential_exacerbations"></div>
+            </div>
+        </div>
+
+        <!-- ninety day window -->
+        <div id="panel_ninety_day_window" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_ninety_day_window"></div>
+            </div>
+        </div>
+
+        <!-- Current patient admissions -->
+        <div id="panel_current_patient_admissions" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_current_patient_admissions"></div>
+            </div>
+        </div>
+    </div>
+    <div id="historyDetails" style="display:none;width:700px">
+        <div>
+            History for: <span id="hisotryName"></span>
+        </div>
+        <div id="historyDetailsPanel"></div>
+    </div>
+</div>
+
+
+
+
+
+<div id="multiplemyeloma_home_page" class="page-container" style="display:none;">
+
+    <!-- The workflow tabs -->
+    <ul class="nav nav-tabs">
+
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_registry_inpatient" href="#panel_registry_inpatient">Current patient admissions <span id="count_registry_inpatient" class="countLabel"></span></a>
+        </li>
+
+        <li role="presentation">
+            <a role="tab" data-toggle="tab" id="tab_all_registry_patients" href="#panel_all_registry_patients">All registry patients <span id="count_all_registry_patients" class="countLabel"></span></a>
+        </li>
+    </ul>
+    <div class="tab-content">
+
+        <!-- Current patient admissions -->
+        <div id="panel_registry_inpatient" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_registry_inpatient"></div>
+            </div>
+        </div>
+
+        <!-- All registry patients -->
+        <div id="panel_all_registry_patients" class="tab-pane fade" role="tabpanel">
+            <div class="panelContent">
+                <div id="jqxgrid_all_registry_patients"></div>
+            </div>
+        </div>
+    </div>
+</div>

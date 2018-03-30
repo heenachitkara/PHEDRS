@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=1200, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+
+    <title>Multi-Registry Control Panel</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css" media="screen" />
+    <link rel="stylesheet" href="css/popModal.css" media="screen" />
+   
+    
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,300" />
+    <link rel="stylesheet" href="scripts/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="scripts/jqwidgets/styles/jqx.darkblue.css" type="text/css" /> <!-- Defined custom theme for Savestate method -->
+    <link rel="stylesheet" href="css/PHEDRS.css" media="screen" />
+    <link rel="stylesheet" href="scripts/jqwidgets/styles/jqx.classic.css" type="text/css" />
+    <style type="text/css">
+       
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <!-- Menubar -->
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-md"></i>
+                    </button>
+                    <a class="navbar-brand" href=""><img class="logoImage" src="images/UABMedicine.png" border="0" alt="UAB Medicine" /><div class="registry-label"></div></a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="#add_by_mrn_page" id="addByMrnButton">Add</a></li>
+                        <li class="dropdown" id="adminDropDown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <i class="fa fa-caret-down"></i></a>
+                            <ul class="dropdown-menu" id="adminDropDownList">
+                                <li id="userAdminList"><a href="#user_list_page" id="userAdminButton">User Administration</a></li>
+                                <li id="addRegList"><a href="#add_new_registry" id="addRegButton">Add New Registry</a></li>
+                                <li id="configRegList"><a href="#config_registry" id="configRegButton">Configure Registry</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="input-group">
+                                <input type="text" autocomplete="on" id="search-critera" class="form-control" aria-label="search criteria" placeholder="Enter MRN" />
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-success" id="search-btn" onclick="search();">SEARCH</button>
+                                    <button type="button" class="btn btn-success" id="advanced_search_page" onclick="advancedSearch()">ADVANCED</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a title="Your information" href=""><i class="fa fa-user whiteIcon"></i>&nbsp;&nbsp;<span class="user-name"></span></a></li>
+                        <li><a title="Logout" onclick="jQuery.phedrs.app.logout();" href=""><i class="fa fa-sign-out whiteIcon" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- All dynamic page content will be displayed here. -->
+        <div id="application_container" class="container"></div>
+
+        <!-- Any dialogs will be displayed from here. -->
+        <div id="application_dialog_container"></div>
+
+        <!-- This can be populated with template files. -->
+        <div id="application_templates" hidden=hidden></div>
+    </div>
+
+    <footer id="footer">
+        <div class="container text-center">
+            <div>&copy; UAB 2017</div>
+        </div>
+    </footer>
+
+    
+
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="scripts/popModal.js"></script>
+    <script type="text/javascript" src="scripts/popModal.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" src="js/Application.js"></script>
+    <script type="text/javascript" src="js/TabbedDataGrid.js"></script>
+    <script type="text/javascript" src="js/dalert.jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    
+    <script type="text/javascript" src="scripts/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxloader.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxwindow.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxcalendar.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/globalization/globalize.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxdata.export.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.export.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.storage.js"></script>
+
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.grouping.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxcheckbox.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxcombobox.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxnumberinput.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxinput.js"></script>
+
+    <script type="text/javascript" src="js/PHEDRS.js"></script>
+    <script type="text/javascript">
+
+     // DO NOT DELETE
+    //console.log("Checking Document URL:"+document.URL);
+           
+            // ak testing : Hijacking Browser's Back button
+          /*history.pushState(null, null, document.URL);
+            window.addEventListener('popstate', function () {
+             
+             console.log(" Am I inside the push state function which is storing the state");
+
+             history.pushState(null, null, document.URL);
+            });
+*/
+
+/*
+            $(window).on("statechange", function() {
+                var historyStack = localStorage.getItem("stateHistory") === null ? [] : JSON.parse(localStorage.getItem("stateHistory"));
+                historyStack.push(window.location.search.substr(1));
+                localStorage.setItem("stateHistory", JSON.stringify(historyStack));
+            });*/
+
+        /*if( window.history && window.history.pushState ){
+
+             history.pushState( "nohb", null, "" );
+              $(window).on( "popstate", function(event){
+                if( !event.originalEvent.state ){
+                  history.pushState( "nohb", null, "" );
+                  return;
+                }
+              });
+            }*/
+
+          /*var hashChangedCount = -2;
+            $(window).on("hashchange", function () {
+                hashChangedCount++;
+                if (top.location.hash == "#main" && hashChangedCount > 0) {
+                    console.log("Ah ah ah! You didn't say the magic word!");
+                }
+                top.location.hash = '#main';
+            });
+            top.location.hash = "#";
+*/
+
+
+   
+        // dmd testing
+        function search() {
+            var searchText = $("#search-critera").val();
+                       
+            if(searchText){ 
+             if(isNaN(searchText)){
+                   dalert.alert("Please enter numeric value for MRN","Non Numeric Search Alert !");
+                    return;
+              }else{
+              jQuery.phedrs.app.setData("entered_search_text",searchText);
+             }
+             jQuery.phedrs.app.setPage("basic_search_page");
+            }
+            else {
+                dalert.alert("Please enter MRN !","Empty Search Alert !");
+            }
+        };
+        function advancedSearch() {
+            jQuery.phedrs.app.setPage("advanced_search_page");
+        };
+
+        // This runs when the DOM hierarchy has been fully constructed.
+        jQuery(function () {
+
+            // Initialize the Registery Application.
+            jQuery.phedrs.initialize();
+        });
+    </script>
+</body>
+</html>
+

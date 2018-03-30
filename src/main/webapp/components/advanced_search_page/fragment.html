@@ -1,0 +1,83 @@
+
+
+
+<div id="advanced_search_page" class="page-container">
+
+    <div class="page-title">Advanced Search</div>
+
+    <table class="search-table">
+        <tr>
+            <th>First name</th>
+            <td><input type="text" class="section-control" id="search_first_name" /></td>
+        </tr>
+        <tr>
+            <th>Last name</th>
+            <td><input type="text" class="section-control" id="search_last_name" /></td>
+        </tr>
+        <tr>
+            <th>MRN</th>
+            <td><input type="text" class="section-control" id="search_mrn" /></td>
+        </tr>
+        <!--<tr>
+            <th>SSN</th>
+            <td><input type="text" class="section-control" id="search_ssn" /></td>
+        </tr>-->
+        <tr>
+            <th>Registry status</th>
+            <td>
+                <select class="section-control" id="search_registry_status" multiple></select>
+                <div class="section-label">Assigned by</div>
+                <select class="section-control" id="search_assigned_by"></select>
+                <div class="section-label">Dates</div>
+                <input type="text" class="section-date" id="search_from_assignment_date" placeholder="mm/dd/yy" />
+                <span class="to-label">to</span><input type="text" class="section-date" id="search_to_assignment_date" placeholder="mm/dd/yy" />  
+            </td>
+        </tr>
+        <tr>
+            <th>Workflow/Review status</th>
+            <td>
+                <select class="section-control" id="search_workflow_status" multiple></select>
+                <div class="section-label">Reviewed by</div>
+                <select class="section-control" id="search_reviewer"></select>
+                <div class="section-label">Dates</div>
+                <input type="text" class="section-date" id="search_from_review_date" placeholder="mm/dd/yy" />
+                <span class="to-label">to</span><input type="text" class="section-date" id="search_to_review_date" placeholder="mm/dd/yy" />
+            </td>
+        </tr>
+        <tr>
+            <th>Detection event</th>
+            <td><select class="section-control" id="search_detection_events" multiple></select></td>
+        </tr>
+        <tr>
+            <th>Patient attributes</th>
+            <td><select class="section-control" id="search_patient_attributes" multiple></select></td>
+        </tr>
+        <tr>
+            <th>Encounter attributes</th>
+            <td><select class="section-control" id="search_encounter_attributes" multiple></select></td>
+        </tr>
+        <tr>
+            <th>Encounter Date</th>
+            <td>
+                <input type="text" class="section-date" id="search_from_encounter_date" placeholder="mm/dd/yy" />
+                <span class="to-label">to</span><input type="text" class="section-date" id="search_to_encounter_date" placeholder="mm/dd/yy" />
+            </td>
+        </tr>
+    </table>
+
+    <button class="btn btn-success search-button">SEARCH</button>
+    <button class="btn btn-warning clear-button">CLEAR</button>
+
+    <br/><br/>
+
+
+    <!-- TODO: consider hiding this until search results are processed -->
+    <div id="search_results_container" style="display: none;">
+       <div id="jqxLoader"></div>
+        <hr class="search_results_divider" />
+        <div class="sectionTitle">Search results <div id="search_results_panel_count" class="sectionTitleCount"></div></div>
+        <div id="search_results_panel_grid" class="sectionPanel"></div>
+        <input style='margin-top: 10px; margin-bottom: 2cm;'  type="button" class="btn btn-success search-button" value="Export to Excel" id='excelExport' />
+    </div>
+
+</div>

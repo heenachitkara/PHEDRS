@@ -1,0 +1,14 @@
+
+
+#workflow_status_history_dialog .modal-dialog {
+    width: 1000px;
+}
+
+#workflow_status_person {
+    font-size: 14pt;
+    font-weight: 700;
+}
+#workflow_status_mrn {
+    font-size: 12pt;
+    margin-bottom: 15px;
+}

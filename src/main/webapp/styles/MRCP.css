@@ -1,0 +1,242 @@
+﻿
+
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+
+}
+body
+{
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+body *
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+b
+{
+    font-weight: 700;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------
+    Standardized page construction
+------------------------------------------------------------------------------------------------------------------------*/
+
+#wrap
+{
+    color: #000;
+    min-height: 100%;
+    height: auto !important;
+    padding: 0;
+}
+#infoContent
+{
+    background-color: #484e55;
+    border-color: #707070;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    color: #fff;
+    font-size: 12pt;
+    letter-spacing: 2px;
+    padding: 10px 0 15px 15px;
+
+}
+#pageContent
+{
+    margin-top: 15px;
+}
+
+
+/* Menubar */
+.navbar-inverse {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    margin-bottom: 0;
+    min-height: 35px;
+    -webkit-filter: none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.navbar-header .fa
+{
+    display: inline-table;
+}
+.navbar-header .fa-bars
+{
+    color: #999;
+}
+.navbar-header .fa-bars:hover
+{
+    color: #fff;
+}
+
+/* The page footer */
+#footer {
+    background-repeat: no-repeat;
+    -webkit-filter: none;
+    color: #ffffff;
+    padding-top: 30px;
+    height: 150px;
+}
+.footerStyle *
+{
+    font-size: 9pt;
+}
+.footerStyle a:link, #footer a:visited
+{
+    color: #A3D55D;
+}
+.footerStyle a:hover
+{
+    color: #F4C300;
+}
+.footerStyle a:active
+{
+    color: #A3D55D;
+}
+.smallText
+{
+    font-size: 9pt;
+}
+
+
+/* Application-specific classes */
+/* For future (color) reference: http://bagwellpromotions.com/awareness-color-definition-guide/ */
+
+/* Cancer registry (CRCP) */
+.crcp_menubar
+{
+    background: #80379b;
+}
+.crcp_menubarLink
+{
+    color: #cd6ff0 !important;
+}
+.crcp_menubarLink:hover
+{
+    color: #fff !important;
+}
+/* TODO: danger and success colors aren't used in the application yet... */
+.crcp_danger
+{
+    color: #e96c6c !important;
+}
+.crcp_success
+{
+    color: #7cd782 !important;
+}
+.crcp_footer
+{
+    background-image: linear-gradient(#80379b, #80379b 60%, #612975);    /* Formerly #1e6b52 #134736 */
+    background: #80379b; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#80379b, #612975); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#80379b, #612975); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#80379b, #612975); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#80379b, #612975); /* Standard syntax */
+}
+
+/* COPD registry */
+.copd_menubar
+{
+    background: #4c4c4c; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#5f5f5f, #4c4c4c); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5f5f5f, #4c4c4c); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5f5f5f, #4c4c4c); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5f5f5f, #4c4c4c); /* Standard syntax */
+}
+.copd_menubarLink
+{
+    color: #ccc;
+}
+.copd_footer
+{
+    background: #4c4c4c; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#5f5f5f, #4c4c4c); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5f5f5f, #4c4c4c); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5f5f5f, #4c4c4c); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5f5f5f, #4c4c4c); /* Standard syntax */
+}
+
+/* Multiple Myeloma registry */
+.multiple_myeloma_menubar
+{
+    background-color: #830051;
+}
+.multiple_myeloma_menubarLink
+{
+    color: #c885ae !important;
+}
+.multiple_myeloma_menubarLink:hover
+{
+    color: #fff !important;
+}
+.multiple_myeloma_footer
+{
+    background: #830051; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#830051, #5c0039); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#830051, #5c0039); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#830051, #5c0039); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#830051, #5c0039); /* Standard syntax */
+}
+
+
+
+#registryDisplayLabel
+{
+
+    color: #ccc;
+    font-size: 9.5pt;
+    margin-top: -1px;
+}
+#search-critera
+{
+    float: right;
+    width: 200px;
+}
+.input-group
+{
+    display: inline-table;
+    margin: 10px 5px 0 30px;
+    width: 360px;
+}
+.whiteIcon
+{
+    color: #fff;
+}
+#userName
+{
+    color: #fff;
+    font-size: 9.5pt;
+}
+.patient-demographics {
+    background-color: #f2f2f2;
+    color: black;
+    border: solid;
+    //display: inline-flex;
+    //width: 100%;
+}
+.patient-details {
+    margin-bottom: 5px;
+}
+.row {
+    margin-top: 10px;
+}
+
+.name {
+    width:50%;
+}
+

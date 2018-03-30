@@ -1,0 +1,86 @@
+﻿
+<div class="row">
+    <div class="col-sm-6">
+        <div class="sectionTitle">
+            Patient Attributes <div id="patient_attributes_count" class="sectionTitleCount"></div>
+            <button class="btn btn-success btn-xs" id="add_patient_attribute_button">ADD</button>
+        </div>
+
+        <div class="sectionPanel">
+            <div id="patient_attributes_grid"></div>
+        </div>
+    </div>
+</div>
+
+<!-- dmd 020217: added "display=none", changed ID to be more intuitive, changed selectors to be relative to the ID. -->
+<div id="patient_attributes_edit_dialog" style="display:none;">
+    <div>Edit</div>
+    <div style="overflow: hidden;">
+        <table>
+            <tr class="spaceUnder">
+                <td align="right">Name:</td>
+
+                <td align="left"><input class="attributeName" readonly /></td>
+            </tr>
+            <br/>
+            <tr class="spaceUnder">
+                <td align="right">Start: </td>
+                <td align="left"><input class="assignedOnDate" /></td>
+            </tr>
+            <tr class="spaceUnder">
+                <td align="right">End: </td>
+                <td align="left"><input class="endAssignedOnDate" /></td>
+            </tr>
+            <tr class="spaceUnder">
+                <td align="right">Comment:</td>
+                <td align="left"><textarea rows="4" cols="30" class="userComment" ></textarea><!-- <input type="text" class="userComment"  style="padding: 5px;"> --></td>
+            </tr>
+            <tr>
+
+                <td align="left"><input type="hidden" class="cvTermID"></td>
+            </tr>
+            <tr>
+                <td align="right"></td>
+                <td style="padding-top: 10px;">
+                    <input class="btn btn-success btn-xs save-button" type="button" value="Save" />
+                    <input class="btn btn-success btn-xs cancel-button" type="button" value="Cancel" />
+                    <input class="btn btn-success btn-xs remove-button" type="button" value="Remove" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- The modal dialog to add patient attributes -->
+<div id="add_patient_attribute_dialog_template" style="display:none;width:700px">
+
+    <div class="add-patient-attribute-dialog">
+        <div class="container-fluid">
+            <div class="search-form">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-sm-6" style="width:250px">
+                            <label>Name</label>
+                            <select class="form-control attribute-name"></select>
+                        </div>
+                        <div class="form-group col-sm-6" style="width:250px">
+                            <label>Comments</label>
+                            <textarea class="form-control attribute-comment"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-2" style="width:100px">
+                        <button class="btn btn-success center-block add-button" data-popmodal-but="ok">Add</button>
+
+                    </div>
+                    <div class="form-group col-sm-2" style="width:100px">
+                        <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

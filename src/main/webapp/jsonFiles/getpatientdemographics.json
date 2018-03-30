@@ -1,0 +1,42 @@
+{
+    "webservice_status": {
+        "status": "SUCCESS",
+        "message": ""
+    },
+    "registry_patient": {
+        "registry_patient_id": 52408,
+        "mrn": "1387275",
+        "full_name": null,
+        "registry_status_id": 2724,
+        "registry_status": "Provisional",
+        "last_review_date": null,
+        "workflow_status": null,
+        "assigned_by_name": null,
+        "lastContactDate": null,
+        "registryWorkflowStatus": "Reviewed",
+        "registry_workflow_status_id": 0
+    },
+    "patient_demographics":
+     {
+        "numeric_patient_id": 0,
+        "mrn": "3014973",
+        "full_name": "VIRGINIA COURTLAND",
+        "first_name": "VIRGINIA",
+        "last_name": "COURTLAND",
+        "phone_number": null,
+        "address1": null,
+        "address2": null,
+        "city": "MARION JUNCTION",
+        "state": null,
+        "zipcode": "36759",
+        "birth_date": "1962-08-22",
+        "gender": "F",
+        "race": "B",
+        "ethnicity": null
+    },
+    "nlp_document_list": null,
+    "registry_encounters_list": null,
+    "registry_encounter_attributes_list": null,
+    "registry_patient_diagnosis_codes_list": null,
+    "registry_all_patient_attribute_list": null
+ }

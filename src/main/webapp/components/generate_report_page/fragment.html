@@ -1,0 +1,88 @@
+
+
+<div id="generate_report_page">
+    <br /><br />
+
+    <div class="container-fluid">
+        <div class="report-heading">
+            <h4 id="report_heading">Generate Report:</h4>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label class="control-label" id="start_date">Start Date:</label>
+                    <input class="form-control" type="text" placehoder="Start Date" id="startdate" />
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label class="control-label" id="end_date">End Date:</label>
+                    <input class="form-control" type="text" placehoder="End Date" id="enddate" />
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <label class="control-label" id="status">Status:</label>
+                <a href="#" title="Additional Information !" data-toggle="popover" data-trigger="hover" data-content="To select multiple status, hold your SHIFT or CTRL or CMD key and click on multiple status !"><i class="icon-info-sign"></i></a>
+                <select multiple class="form-control">
+                    <option>All</option>
+                    <option>New</option>
+                    <option>Under Review</option>
+                    <option>Completed</option>
+                    <option>Validated</option>
+                    <option>Rejected</option>
+                    <option>Assigned</option>
+                </select>
+            </div>
+
+
+
+            <div class="col-xs-6">
+
+                <h5 id="assigned">Assigned To:</h5>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="btn-group btn-input clearfix">
+                            <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
+                                <span data-bind="label">Select Options</span>&nbsp;<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">ALL</a></li>
+                                <li><a href="#">Rachel Brown</a></li>
+                                <li><a href="#">Denita Austin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- <label class="control-label" id="assigned">Assigned To:</label>
+                <select class="custom-select">
+                  <option selected>Select Options</option>
+                  <option value="1">ALL</option>
+                  <option value="2">Rachel Brown</option>
+                  <option value="3">Denita Austin</option>
+                </select> -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <button class="btn btn-default center-block" id="gen_report">Generate Report</button>
+
+
+    </div>
+</div>

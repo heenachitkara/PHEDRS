@@ -1,0 +1,90 @@
+
+
+
+<div id="encounter_attributes_dialog" class="modal fade" role="dialog">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close close-icon" data-dismiss="modal">&times;</button> 
+                <h2 class="modal-title">Encounter Attributes</h2>
+            </div>
+
+            <div class="modal-body">
+
+                <h3>Encounter</h3>
+                <hr />
+
+                <table class="enc-data-table" align="left">
+                    <tr>
+                        <th><b>Location:</b></th>
+                        <td id="encounter_location"></td>
+                    </tr>
+                    <tr>
+                        <th><b>Type:</b>b</th>
+                        <td id="encounter_type"></td>
+                    </tr>
+                    <tr>
+                        <th><b>Dates:</b></th>
+                        <td id="encounter_dates"></td>
+                    </tr>
+                    <tr>
+                        <th><b>Reason for visit:</b></th>
+                        <td id="encounter_reason"></td>
+                    </tr>
+                </table>
+                <hr/>
+               
+                
+                <h3 >Encounter Insurance Information</h3>
+                <hr />
+                <div align="center">
+                <div  class="sectionTitle">Health Quest FIN Number : <div id="hqNum" class="sectionTitleCount"></div></div>
+                
+                <div class="sectionTitle">Encounter Insurance Count<div id="encounter_insurance_panel_count" class="sectionTitleCount"></div></div>
+                <div id="encounter_insurance_panel_grid" class="sectionPanel"></div>
+                </div>
+                
+              
+                <h3>Assigned attributes <button class="btn btn-xs btn-success add-attribute-ctrl">ADD</button></h3>
+                <hr />
+                <div class="attribute-edit-panel" style="display: none;">
+                    <div class="add-attribute-title">Add attribute <select class="available-attributes"></select></div>
+                    <textarea class="attribute-comment" rows="5" placeholder="Comment (optional)"></textarea>
+                    <div class="attribute-edit-buttons">
+                        <button class="btn btn-xs btn-success save-attribute-ctrl">SAVE</button>
+                        <button class="btn btn-xs btn-warning cancel-attribute-ctrl">CANCEL</button>
+                    </div>
+                </div>
+
+                <div id="encounter_attributes_panel"></div>
+                <!-- Modal confirm -->
+                <div class="modal" id="confirmModal" style="display: none;top:80px;left:250px;">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content" style=" height:120px;width:500px;">
+                            <div class="modal-header">
+                                <div class="modal-title" id="confirmMessage"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="confirmOk">Ok</button>
+                                <button type="button" class="btn btn-danger" id="confirmCancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END for confirmmodal -->
+
+            </div>
+
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-success save-button">SAVE</button>-->
+                <button type="button" class="btn btn-xs btn-warning cancel-button external-cancel-button" data-dismiss="modal">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

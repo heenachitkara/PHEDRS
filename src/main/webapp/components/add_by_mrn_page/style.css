@@ -1,0 +1,64 @@
+
+
+
+
+
+.search-panel label {
+    font-size: 12pt;
+    font-weight: 700;
+}
+.search-panel .mrn-ctrl {
+    padding: 2px;
+}
+
+
+.patient-data-preview {
+    margin: 15px 0 30px 0;
+}
+
+.patient-data-preview .full-name {
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+.patient-data-preview .mrn {
+    font-size: 12pt;
+}
+
+.patient-data-preview .race-gender-age {
+    font-size: 10pt;
+}
+
+
+
+.error-panel {
+    color: #f00;
+    font-size: 16pt;
+    font-weight: 700;
+    margin: 30px 0 30px 0;
+}
+
+.existing-patient-panel {
+    font-size: 16pt;
+    font-weight: 700;
+    margin: 15px 0 30px 0;
+}
+
+.new-patient-panel {
+    margin: 30px 0 30px 0;
+}
+.new-patient-panel label {
+    font-size: 12pt;
+    font-weight: 700;
+}
+.new-patient-panel .status-ctrl-row {
+    margin: 5px 0 2px 0;
+    width: 400px;
+}
+.new-patient-panel .comment-ctrl {
+    width: 400px;
+}
+.new-patient-panel .add-button {
+    display: block;
+    margin: 5px 0 15px 0;
+}

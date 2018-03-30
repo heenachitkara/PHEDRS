@@ -1,0 +1,267 @@
+
+
+
+<div id="config_registry">
+    <div class="page-title">Configure Registry</div>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th width="50" nowrap>Registry Name</th>
+            <td width="40"><input type="text"  class="section-control registry_name" id="registry_name" size="20" maxlength="50" /></td>
+            <td width="10"><button class="btn btn-success btn-xs config_regsitName_update_button" id="config_regsitName_update_button">Update </button><td>
+        </tr>
+        <tr>
+            <th>Registry Definition </th>
+            <td><textarea rows="5" class="section-control registry_def" id="registry_def" cols=" 50" maxlength="2000"></textarea> </td>
+            <td><button class="btn btn-success btn-xs config_regsitDef_update_button" id="config_regsitDef_update_button">Update</button><td>
+        </tr>
+    </table>
+
+    <!--<div class="page-title"><button type="button" class="btn btn-success btn-sm add-registry-button">ADD Registry</button></div>-->
+    <div id="configRegistry_summary_page">
+
+        <div class="row">
+            <!-- Registry Patient attributes panel -->
+            <div id="configRegistry_patient_attributes_panel" class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="sectionTitle">
+                            <!--<div id="registry_name_patient" class="sectionTitleCount"></div>--> Patient Attributes
+                            <button class="btn btn-success btn-xs" id="add_configRegistry_patient_attribute_button">ADD</button>
+                        </div>
+                        <div class="sectionPanel">
+                            <div id="configRegistry_patient_attributes_grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Registry Encounters panel -->
+            <div id="configRegistry_encounters_panel" class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="sectionTitle">
+                            <!--<div id="registry_name_encounter" class="sectionTitleCount"></div>--> Encounter Attributes
+                            <button class="btn btn-success btn-xs" id="add_configRegistry_encounters_button">ADD</button>
+                        </div>
+                        <div class="sectionPanel">
+                            <div id="configRegistry_encounters_grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Patient Detection config -->
+            <div class="col-sm-2">
+            </div>
+            <div id="configPatient_detection_panel" class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="sectionTitle">
+                            Attribute Configuration <button class="btn btn-success btn-xs" id="add_configPatient_detection_button">ADD</button>
+                        </div>
+                        <div class="sectionPanel">
+                            <div id="configPatient_detection_grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="configPatient_attributes_edit_dialog" style="display:none;">
+        <div>Edit Patient Attribute</div>
+        <div style="overflow: hidden;">
+            <table>
+                <tr>
+                    <th>Name </th>
+                    <td style="padding-left: 10px;"><input type="text" class="configPatient_attributes_edit_registry_name" size="20" maxlength="50" />
+                        <input type="hidden" class="configPatient_attributes_edit_cvId" />
+                        <input type="hidden" class="configPatient_attributes_edit_cvTermId" /></td>
+                </tr>
+                <tr>
+                    <th>Definition </th>
+                    <td style="padding-left: 10px;padding-top: 5px;"><textarea class="configPatient_attributes_edit_registry_def" rows="5" cols="40" maxlength="2000"></textarea> </td>
+                </tr>
+                <tr>
+                    <td align="right"></td>
+                    <td style="padding-top: 10px;">
+                        <input class="btn btn-success btn-xs save-button" type="button" value="Save" />
+                        <input class="btn btn-success btn-xs cancel-button" type="button" value="Cancel" />
+                        <input class="btn btn-success btn-xs remove-button" type="button" value="Remove" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="configEncounter_attributes_edit_dialog" style="display:none;">
+        <div>Edit Encounter Attribute</div>
+        <div style="overflow: hidden;">
+            <table>
+                <tr>
+                    <th>Name </th>
+                    <td style="padding-left: 10px;"><input type="text" class="configEncounter_attributes_edit_registry_name" size="20" maxlength="50" />
+                        <input type="hidden" class="configEncounter_attributes_edit_cvId" />
+                        <input type="hidden" class="configEncounter_attributes_edit_cvTermId" /></td>
+                </tr>
+                <tr>
+                    <th>Definition </th>
+                    <td style="padding-left: 10px;padding-top: 5px;"><textarea class="configEncounter_attributes_edit_registry_def" rows="5" cols="40" maxlength="2000"></textarea> </td>
+                </tr>
+                <tr>
+                    <td align="right"></td>
+                    <td style="padding-top: 10px;">
+                        <input class="btn btn-success btn-xs save-button" type="button" value="Save" />
+                        <input class="btn btn-success btn-xs cancel-button" type="button" value="Cancel" />
+                        <input class="btn btn-success btn-xs remove-button" type="button" value="Remove" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="configPatient_detection_edit_dialog" style="display:none;width:700px">
+        <div>Edit Attribute Configuration</div>
+        <div style="overflow: hidden;">
+            <table>
+                <tr>
+                    <th>Name </th>
+                    <td style="padding-left: 10px;" >
+                        <select id="attribConfigAttributesList" class="attribConfigAttributesList"></select>
+                        
+                        <!--<input type="text" class="configPatient_detection_edit_registry_name" size="20" maxlength="50" />-->
+                        <input type="hidden" class="configPatient_detection_edit_registry_name" />
+                        <input type="hidden" class="configPatient_detection_edit_cvId" />
+                        <input type="hidden" class="configPatient_detection_edit_cvtermPropID" />
+                        <input type="hidden" class="configPatient_detection_edit_typeID" />
+                       </td>
+                </tr>
+                <tr>
+                    <th>Value </th>
+                    <td style="padding-left: 10px;padding-top: 5px;"><textarea class="configPatient_detection_edit_registry_def" rows="5" cols="40" maxlength="2000"></textarea> </td>
+                </tr>
+                <tr>
+                    <td align="right"></td>
+                    <td style="padding-top: 10px;">
+                        <input class="btn btn-success btn-xs save-button" type="button" value="Save" />
+                        <input class="btn btn-success btn-xs cancel-button" type="button" value="Cancel" />
+                        <input class="btn btn-success btn-xs remove-button" type="button" value="Remove" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- The modal dialog to add patient attributes -->
+    <div id="add_patient_attribute_dialog_template" style="display:none;width:700px">
+
+        <div class="add-patient-attribute-dialog">
+            <div class="container-fluid">
+                <div class="search-form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="form-group col-sm-6" style="width:250px">
+                                <label>Name</label>
+                                <input type="text" class="configPatient_attributes_add_registry_name" size="20" maxlength="50" />
+                            </div>
+                            <div class="form-group col-sm-6" style="width:250px">
+                                <label>Definition</label>
+                                <textarea class="configPatient_attributes_add_registry_def"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-2" style="width:100px">
+                            <button class="btn btn-success center-block add-button" data-popmodal-but="ok">Add</button>
+
+                        </div>
+                        <div class="form-group col-sm-2" style="width:100px">
+                            <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The modal dialog to add encounter attributes -->
+    <div id="add_encounter_attribute_dialog_template" style="display:none;width:700px">
+
+        <div class="add-encounter-attribute-dialog">
+            <div class="container-fluid">
+                <div class="search-form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="form-group col-sm-6" style="width:250px">
+                                <label>Name</label>
+                                <input type="text" class="configEncounter_attributes_add_registry_name" size="20" maxlength="50" />
+                            </div>
+                            <div class="form-group col-sm-6" style="width:250px">
+                                <label>Definition</label>
+                                <textarea class="configEncounter_attributes_add_registry_def"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-2" style="width:100px">
+                            <button class="btn btn-success center-block add-button" data-popmodal-but="ok">Add</button>
+
+                        </div>
+                        <div class="form-group col-sm-2" style="width:100px">
+                            <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The modal dialog to add encounter attributes -->
+    <div id="add_detection_attribute_dialog_template" style="display:none;width:700px">
+
+        <div class="add-detection-attribute-dialog">
+            <div class="container-fluid">
+                <div class="search-form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="form-group col-sm-6" style="width:250px">
+                                <label>Name</label>
+                                <input type="text" class="configDetection_attributes_add_registry_name" size="20" maxlength="50" />
+                            </div>
+                            <div class="form-group col-sm-6" style="width:250px">
+                                <label>Definition</label>
+                                <textarea class="configDetection_attributes_add_registry_def"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-2" style="width:100px">
+                            <button class="btn btn-success center-block add-button" data-popmodal-but="ok">Add</button>
+
+                        </div>
+                        <div class="form-group col-sm-2" style="width:100px">
+                            <button class="btn btn-success center-block cancel-button" data-popmodal-but="cancel">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
